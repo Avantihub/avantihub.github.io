@@ -1,0 +1,1454 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Avant1's Notes">
+      
+      
+        <meta name="author" content="Avant1">
+      
+      
+        <link rel="canonical" href="https://avantihub.github.io/cs/pl/python/CS61A/cs61a/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Week 1 - Avant1's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M6 13h8l-3.5 3.5 1.42 1.42L17.84 12l-5.92-5.92L10.5 7.5 14 11H6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#week-1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../../.." title="Avant1&#39;s Notes" class="md-header__button md-logo" aria-label="Avant1's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Avant1's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Week 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  A bite of CS
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+    
+  
+  Cs
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Avant1&#39;s Notes" class="md-nav__button md-logo" aria-label="Avant1's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    Avant1's Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A bite of CS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Cs
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Pl
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pl
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C cpp
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            C cpp
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_1" id="__nav_2_2_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../c_cpp/C/c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2_2" id="__nav_2_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CPP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            CPP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../c_cpp/CPP/cpp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cpp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3_2" id="__nav_2_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CS61A
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_2_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            CS61A
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Week 1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#namesassignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Names,Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-and-none" class="md-nav__link">
+    <span class="md-ellipsis">
+      Print and None
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Contexts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#short-circuiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short Circuiting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#namesassignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Names,Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defining-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Defining Functions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#print-and-none" class="md-nav__link">
+    <span class="md-ellipsis">
+      Print and None
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-contexts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boolean Contexts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#short-circuiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Short Circuiting
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="week-1">Week 1</h1>
+<h2 id="namesassignment">Names,Assignment</h2>
+<ul>
+<li>
+<p>在Python中，<code>Name</code>（名称）是指向对象的引用。在Python的上下文中，几乎所有的东西都是对象，包括函数、变量、数据结构等。Name可以是一个变量名，也可以是一个函数名。当你创建一个变量或函数时，你实际上是在为一个对象创建了一个名称（或标识符），通过这个名称可以访问或调用该对象。</p>
+</li>
+<li>
+<p>在Python中，<code>assignment</code>（赋值）是将一个值绑定到一个名称（通常是一个变量名）的过程。赋值操作使用等号=来完成。当进行赋值时，等号右侧的表达式会被计算，然后其结果会被绑定到等号左侧的名称上。</p>
+</li>
+</ul>
+<pre><code class="language-python">&gt;&gt;&gt; f = min
+&gt;&gt;&gt; f = max
+&gt;&gt;&gt; g, h = min, max
+&gt;&gt;&gt; max = g
+&gt;&gt;&gt; max(f(2,g(h(1,5),3)),4)
+3
+</code></pre>
+<ul>
+<li>在上面这个例子中，不同于C，我们将内置函数赋值给变量后，如<code>f = max</code>，那么f对应的就是max函数的内容，并<strong>不会随着max的改变而改变</strong></li>
+</ul>
+<h2 id="defining-functions">Defining Functions</h2>
+<ul>
+<li><strong>纯函数（Pure Functions）</strong> 是这样一种函数，它满足以下两个主要条件：<ul>
+<li><strong>相同的输入总是产生相同的输出</strong>。纯函数不依赖于并且也不修改定义在函数外部的状态。这意味着，给定相同的参数，无论调用多少次，纯函数都会返回相同的结果。</li>
+<li>没有副作用。纯函数<strong>不会改变任何外部状态</strong>（例如，不修改全局变量，不写入数据库等），也不会有如打印到控制台、写文件这样的操作。</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">def adder(a,b):
+    return a+b
+</code></pre>
+<ul>
+<li><strong>非纯函数（Non-Pure Functions）</strong> 是指不满足上述纯函数条件的函数。它们可能依赖于外部状态，或者在执行过程中改变外部状态（产生副作用）。</li>
+</ul>
+<pre><code class="language-python">counter = 0
+
+def increment():
+    global counter
+    counter += 1
+    return counter
+</code></pre>
+<hr />
+<ul>
+<li>在Python中，<code>function signature</code>（函数签名）指的是函数定义的一部分，它包括函数的名称、接收的参数（包括位置参数、关键字参数、可变位置参数、可变关键字参数等）以及有时候包括返回类型的注解。函数签名为调用者提供了函数如何被调用的信息。</li>
+</ul>
+<hr />
+<pre><code class="language-python">def greet(name: str) -&gt; str:
+    return &quot;Hello, &quot; + name
+</code></pre>
+<ul>
+<li>在这个例子中，函数签名是<code>greet(name: str) -&gt; str</code>，它告诉我们：</li>
+<li>函数的名称是greet。</li>
+<li>它接受一个名为name的参数，该参数被注解为str类型。</li>
+<li>它返回一个str类型的值。</li>
+</ul>
+<hr />
+<pre><code class="language-python">def divide_exact(n,d=10):
+    return n//d, n%d
+</code></pre>
+<ul>
+<li><code>d=10</code>并不是为d赋值，而是当没有传入d的值时，会为d默认赋值为10</li>
+</ul>
+<h2 id="print-and-none">Print and None</h2>
+<ul>
+<li>
+<p>在Python中，<code>None</code>是一个特殊的常量，用于表示空值或者无值的状态。它是<code>NoneType</code>类型的唯一值。<code>None</code>经常用于函数返回值，表示函数没有返回任何具体的值。同时，它也常用于变量初始化，以及表示某些对象或变量尚未被赋予具体的值。</p>
+</li>
+<li>
+<p>在Python中，<code>print</code>是一个内置函数，用于将信息输出到标准输出（通常是屏幕）。它可以接受多个参数，将它们转换为字符串（如果它们不已经是字符串的话），然后输出这些字符串，参数之间默认用空格分隔，最后默认输出一个换行符。同时<code>print</code>函数没有返回值，在调用的时候就会<strong>返回None</strong></p>
+</li>
+</ul>
+<pre><code class="language-python">&gt;&gt;&gt; print(1)
+1
+&gt;&gt;&gt; print(1,2)
+1 2
+&gt;&gt;&gt; print(print(1),print(2))
+1
+2
+None None
+</code></pre>
+<h2 id="boolean-contexts">Boolean Contexts</h2>
+<ul>
+<li>False Values in Python:<ul>
+<li><strong>False</strong></li>
+<li><strong>0</strong></li>
+<li><strong>''</strong></li>
+<li><strong>None</strong></li>
+</ul>
+</li>
+<li>True Values in Python: Anything else</li>
+</ul>
+<h2 id="short-circuiting">Short Circuiting</h2>
+<ul>
+<li><code>and</code>操作符，Python会先评估左侧表达式，若为<code>False</code>则结果为<strong>左侧表达式的值</strong>；若为<code>True</code>,则结果为<strong>右侧表达式的值</strong></li>
+<li><code>or</code>操作符，Python会先评估左侧表达式，若为<code>False</code>则结果为<strong>右侧表达式的值</strong>；若为<code>True</code>,则结果为<strong>左侧表达式的值</strong></li>
+</ul>
+<pre><code class="language-python">&gt;&gt;&gt; True and 13
+13
+&gt;&gt;&gt; False or 0
+0
+&gt;&gt;&gt; not 10
+False
+&gt;&gt;&gt; not None
+True
+</code></pre>
+<h1 id="week-2">Week 2</h1>
+<h2 id="locally-defined-functions">Locally Defined Functions</h2>
+<pre><code class="language-python">def make_adder(n):
+    def adder(k):
+        return k+n
+    return adder
+&quot;&quot;&quot;
+&gt;&gt;&gt; add_three = make_adder(3)
+&gt;&gt;&gt; add_three(4)
+7
+&quot;&quot;&quot;
+</code></pre>
+<ul>
+<li><code>make_adder(n)</code>定义了一个函数，这个函数内部定义了另一个函数<code>adder(k)</code>。<code>adder</code>函数将其参数<code>k</code>与外部函数的参数<code>n</code>相加，并返回结果。</li>
+<li>当<code>make_adder</code>被调用时，比如<code>make_adder(3)</code>，它<strong>返回一个adder函数</strong>，这个<code>adder</code>函数将会把它的参数和3相加。</li>
+</ul>
+<h2 id="functions-that-accept-arbitrary-arguments">Functions that accept arbitrary arguments</h2>
+<ul>
+<li>我们想编写一个<strong>接受任意数量的参数</strong>的函数，然后使用这些参数调用另一个函数</li>
+<li>运用 <strong>*args</strong> 以接受任意数量的参数</li>
+</ul>
+<pre><code class="language-python">&gt;&gt;&gt; def printed(f):
+...     def print_and_return(*args):
+...         result = f(*args)
+...         print('Result:', result)
+...         return result
+...     return print_and_return
+&gt;&gt;&gt; printed_pow = printed(pow)
+&gt;&gt;&gt; printed_pow(2, 8)  # *args represents the arguments (2, 8)
+Result: 256
+256
+&gt;&gt;&gt; printed_abs = printed(abs)
+&gt;&gt;&gt; printed_abs(-10)  # *args represents one argument (-10)
+Result: 10
+10
+</code></pre>
+<pre><code class="language-python">def make_averaged(original_function, samples_count=1000):
+    &quot;&quot;&quot;Return a function that returns the average value of ORIGINAL_FUNCTION
+    called SAMPLES_COUNT times.
+
+    To implement this function, you will have to use *args syntax.
+
+    &gt;&gt;&gt; dice = make_test_dice(4, 2, 5, 1)
+    &gt;&gt;&gt; averaged_dice = make_averaged(roll_dice, 40)
+    &gt;&gt;&gt; averaged_dice(1, dice)  # The avg of 10 4's, 10 2's, 10 5's, and 10 1's
+    3.0
+    &quot;&quot;&quot;
+    def averaged(*args):
+        total = 0
+        for i in range (samples_count):
+            total += original_function(*args)
+        return total/samples_count
+    return averaged
+</code></pre>
+<h2 id="high-order-function">High Order Function</h2>
+<p>高阶函数（High Order Function）是指至少满足下列一个条件的函数：
+- 接受<strong>一个或多个函数作为参数</strong>。
+- 返回<strong>另一个函数</strong>作为结果。
+- 高阶函数在函数式编程中非常重要，它们允许函数操作函数，提供了极大的灵活性和表达力。例如，Python中的<code>map</code>和<code>filter</code>都是高阶函数，因为它们接受一个函数作为参数。另一个例子是装饰器（Decorator），它接受一个函数作为输入并返回一个增强版的函数。</p>
+<hr />
+<ul>
+<li><strong>高阶函数</strong>，注意是在<strong>调用函数</strong>还是在<strong>赋值</strong></li>
+</ul>
+<pre><code class="language-python">def cake():
+    print('beets')
+    def pie:
+        print('sweets')
+        return 'cake'
+    return pie
+&quot;&quot;&quot;
+&gt;&gt;&gt; chocolate = cake()
+beets
+&gt;&gt;&gt; chocolate
+&lt;function pie at ...&gt;
+&gt;&gt;&gt; chocolate()
+sweets
+'cake'
+&gt;&gt;&gt; more_chocolate, more_cake = chocolate(),cake
+sweets
+&gt;&gt;&gt; more_chocolate
+'cake'
+&quot;&quot;&quot;
+def snake(x,y):
+    if cake == more_cake:
+        return chocolate
+    else:
+        return x+y
+&quot;&quot;&quot;
+&gt;&gt;&gt; snake(10,20)
+&lt;function pie at ...&gt;
+&gt;&gt;&gt; snake(10,20)()
+sweets
+'cake'
+&gt;&gt;&gt; cake = 'cake'
+&gt;&gt;&gt; snake(10,20)
+30
+</code></pre>
+<hr />
+<h3 id="horse-and-mask">Horse and Mask</h3>
+<ul>
+<li><strong>形参、frame的绕中绕</strong>，搞清每一个frame和它的parent</li>
+</ul>
+<pre><code class="language-python">def horse(mask):
+    horse = mask
+    def mask(horse):
+        return horse
+    return horse(mask)
+
+mask = lambda horse: horse(2)
+&quot;&quot;&quot;
+&gt;&gt;&gt; horse(mask)
+2
+&quot;&quot;&quot;
+</code></pre>
+<ul>
+<li>在<code>global frame</code>中我们定义了<strong>两个函数</strong>，一个是<code>horse</code>，一个是由lambda表达式构成的<code>mask</code></li>
+<li>然后调用<code>horse(mask)</code>，这里是在global下调用的，所以<code>horse</code>和<code>mask</code>就指向上文的两者</li>
+<li>然后进入<code>f1: horse,[parent = Global]</code>，开始执行body，执行到<code>horse = mask</code>，呈现下图的关系：
+<img alt="alt text" src="../horse_mask_1.png" /></li>
+<li>在定义了内部的<code>mask</code>函数后，返回<code>horse(mask)</code>，这时候两者所指对象有所变化：
+<img alt="alt text" src="../horse_mask_2.png" /></li>
+<li>于是进入<code>f2: λ &lt;line 7&gt; [parent = Global]</code>，在这个函数里 <code>horse</code> 其实指向之前定义的<strong>内部函数[parent = f1]</strong>
+<img alt="alt text" src="../horse_mask_3.png" /></li>
+<li>然后因为在<code>f2</code>里面返回的是<code>horse(2)</code>，所以进入<code>f3: mask [parent = f1]</code>，因而<code>return 2</code>
+<img alt="alt text" src="../horse_mask_4.png" /></li>
+<li>又回到<code>f2</code>返回2，又回到<code>f1</code>返回2
+<img alt="alt text" src="../horse_mask_5.png" />
+<img alt="alt text" src="../horse_mask_6.png" /></li>
+</ul>
+<h2 id="lambda-expression">Lambda Expression</h2>
+<ul>
+<li><strong>Lambda 表达式</strong>，也称为匿名函数，是一种在 Python 中快速定义单行的最小函数的方式。Lambda 函数可以接受任意数量的参数，但只能有一个表达式。这个表达式的计算结果会被这个函数<strong>自动返回</strong>。</li>
+</ul>
+<pre><code class="language-python">add = lambda x, y: x + y
+print(add(5, 3))  # 输出: 8
+
+is_even = lambda x: x % 2 == 0
+print(is_even(4))  # 输出: True
+print(is_even(5))  # 输出: False
+
+make_adder = lambda x:lambda y:x+y
+adder = make_adder(3)
+print(adder(5)) #输出：8
+</code></pre>
+<hr />
+<ul>
+<li>结合高阶函数和lambda表达式，我们可以写出一些功能强大的函数，比如<strong>inverse</strong></li>
+</ul>
+<pre><code class="language-python">def search(f):
+    x = 0
+    while True:
+        if f(x):
+            return x
+        x += 1
+# 这个函数用来寻找满足条件的x
+
+def inverse(f):
+    return lambda y:search(lambda x:f(x) == y)
+# 这个高阶函数返回一个单参函数search
+# 其中向search传入了 f(x) == y 的判断函数
+
+&quot;&quot;&quot;
+&gt;&gt;&gt; square = lambda x: x*x
+&gt;&gt;&gt; sqrt = inverse(square)
+&gt;&gt;&gt; sqrt(16)
+4
+&quot;&quot;&quot;
+# 当然这个版本只适用于普通的整数，更精确的平方根求法可以用牛顿法或者平方根倒数算法
+</code></pre>
+<h2 id="currying">Currying</h2>
+<ul>
+<li><strong>Currying</strong> 是一种在函数式编程中常见的技术，它指的是将一个<strong>多参数的函数</strong>转换成一系列<strong>使用一个参数的，Higher-Order的函数</strong>的过程。</li>
+</ul>
+<pre><code class="language-python">def curry2(f):
+    def g(x):
+        def h(y):
+            return f(x,y)
+        return h
+    return g
+
+&quot;&quot;&quot;
+&gt;&gt;&gt; from operator import add
+&gt;&gt;&gt; m = curry2(add)
+&gt;&gt;&gt; add_three = m(3)
+&gt;&gt;&gt; add_three(2)
+5
+&gt;&gt;&gt; curry2 = lambda f: lambda: x: lambda y: f(x,y)
+...
+...
+&quot;&quot;&quot;
+</code></pre>
+<h2 id="decorators">Decorators</h2>
+<ul>
+<li><strong>装饰器（Decorator）</strong>是 Python 中一个非常强大的功能，允许你在<strong>不修改原始函数或方法定义</strong>的情况下，给它们<strong>添加额外的功能</strong>。装饰器<strong>本质上是一个函数</strong>，它<strong>接受一个函数作为参数并返回一个新的函数</strong>。使用装饰器可以实现很多功能，比如访问控制、日志记录、测量执行时间等。</li>
+<li>装饰器的基本语法是在<strong>函数定义前</strong>使用 <code>@</code> 符号加上装饰器的名称。</li>
+<li>但对于lambda表达式就不能直接使用<code>@</code>，而是调用<code>Decorator</code>函数
+<img alt="alt text" src="../decorator.png" /></li>
+</ul>
+<pre><code class="language-python">def trace1 (fn):
+    &quot;&quot;&quot;Returns a version of fn that first prints before it is called
+    fn - a function of 1 argument
+    &quot;&quot;&quot;
+    def trace(x):
+        print('Calling',fn,'on argument',x)
+        return fn(x)
+    return trace
+
+@trace1
+def square(x):
+    return x*x
+
+@trace1
+def a_function:
+    return 1
+
+&quot;&quot;&quot;
+&gt;&gt;&gt; square(4)
+Calling &lt;function square at ...&gt; on argument 4
+16
+&quot;&quot;&quot;
+</code></pre>
+<h2 id="recursion">Recursion</h2>
+<ul>
+<li><em>For Instance</em></li>
+</ul>
+<pre><code class="language-python">def print_sum(x):
+    print(x)
+    def next_sum(y):
+        return print_sum(x+y)
+    return next_sum
+
+print_sum(1)(3)(5)
+</code></pre>
+<p><img alt="alt text" src="../recursion_1.png" /></p>
+<ul>
+<li><strong>递归函数（Recursion Functions）</strong> 是在其定义中调用自身的函数。</li>
+<li><strong>基本情况（Base Case）</strong>：这是递归停止的条件，没有它，递归将无限循环下去。</li>
+<li><strong>递归步骤（Recursive Step）</strong>：在这一步中，函数调用自身，通常是用一组不同的参数。</li>
+</ul>
+<h3 id="mutual-recursion">Mutual Recursion</h3>
+<ul>
+<li><strong>互递归（Mutual Recursion）</strong> 是指两个或多个函数相互调用对方以实现递归的情况。</li>
+</ul>
+<h4 id="luhn-algorithm">Luhn Algorithm</h4>
+<ul>
+<li>从右边<strong>第二个数字</strong>开始，每隔一个数字乘以2。</li>
+<li>如果乘以2的结果是<strong>两位数</strong>，则将这两位数相加得到一个单一的数字(e.g. 10 -&gt; 1 + 0 = 1)</li>
+<li>然后加和所有数字，如果这个总和可以<strong>被10整除</strong>则是有效的
+<img alt="alt text" src="../luhn.png" /></li>
+</ul>
+<pre><code class="language-python">def luhn_sum(n):
+    if n &lt; 10:
+        return n
+    else :
+        all_but_last, last = split(n)
+        return luhn_sum_double(all_but_last) + last
+
+def luhn_sum_double(n):
+    all_but_last, last = split(n)
+    double_last_sum = sum_digits(2 * last)
+    if n &lt; 10:
+        return double_last_sum
+    else:
+        return luhn_sum(all_but_last) + double_last_sum
+</code></pre>
+<h3 id="tree-recursion">Tree Recursion</h3>
+<ul>
+<li><strong>树递归（Tree Recursion）</strong> 是一种特殊类型的递归模式，其中一个函数在其执行过程中不止一次地调用自身。每次函数<strong>调用自身时，都会创建一个新的分支</strong>，在逻辑上形成了一棵树。
+<img alt="alt text" src="../recursion_2.png" /></li>
+</ul>
+<hr />
+<p>例如：<code>Cascade</code>函数</p>
+<pre><code class="language-python">def cascade(n):
+    if n &lt; 10:
+        print(n)
+    else :
+        print(n)
+        cascade(n // 10)
+        print(n)
+
+&quot;&quot;&quot;
+&gt;&gt;&gt; cascade(123)
+123
+12
+1
+12
+123
+&quot;&quot;&quot;
+</code></pre>
+<ul>
+<li><strong>Inverse Cascade</strong></li>
+</ul>
+<pre><code class="language-python">&quot;&quot;&quot;
+1
+12
+123
+1234
+123
+12
+1
+&quot;&quot;&quot;
+# 对于形如这样的inverse_cascade，我们打算把函数拆分成三部分：grow，print，shrink
+def inverse_cascade(n):
+    grow(n)
+    print(n)
+    shrink(n)
+
+#然后引入f_then_g函数，来调整函数的前后调用顺序
+def f_then_g(f,g,n):
+    if n:
+        f(n)
+        g(n)
+
+#最后定义grow和shrink
+grow = lambda n: f_then_g(grow, print, n // 10)
+shrink = lambda n: f_then_g(print, shrink, n // 10)
+</code></pre>
+<hr />
+<ul>
+<li><strong>Counting Partitions</strong></li>
+<li><code>count_partitions(n,m)</code>表示用<strong>不超过m的正整数</strong>来表示n，其中这些数的排列成<strong>非递减</strong>的顺序，就叫做n的划分数
+<img alt="alt text" src="../recursion_3.png" /></li>
+</ul>
+<pre><code class="language-python">def count_partitions(n,m):
+    if n == 0:
+        return 1 #什么都没有也是一种划分
+    elif n &lt; 0:
+        return 0
+    elif m == 0:
+        return 0
+    else:
+        with_m = count_partitions(n-m,m)
+        without_m = count_partitions(n,m-1)
+
+result = count_partitions(5,3)
+# 1 + 1 + 1 + 1 + 1 = 5
+# 1 + 1 + 1 + 2 =5
+# 1 + 2 + 2 = 5
+# 1 + 1 + 3 = 5
+# 2 + 3 = 5
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
