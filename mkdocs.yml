@@ -163,6 +163,6 @@ nav:
               - Index: cs/pl/python/index.md
               - CS61A: cs/pl/python/cs61a.md
   - Assembly:
-      - assembly/index.md
+      - asm1: assembly/asm1.md
   - CodingProb:
-      - codingprob/P1011.md    -
+      - P1011: codingprob/P1011.md    -
