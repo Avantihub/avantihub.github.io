@@ -796,7 +796,9 @@ double fabs(double x);
     
     ```c
     int cmpfunc (const void * a, const void * b) {
-        return ( *(int*)a - *(int*)b );
+        return ( *(int*)a - *(int*)b );//sort from small to big
+        //以a-b为升序排序
+        return -( *(int*)a - *(int*)b );//sort from big to small
     }
     qsort(values, 5, sizeof(int), cmpfunc);
     ```
