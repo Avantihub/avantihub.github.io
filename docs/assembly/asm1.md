@@ -42,3 +42,6 @@ putchar(0[s+i]);
     end main
     
 ```
+
+&    |  ^   ~    <<  >> _rotl() _rotr()
+and  or xor not shl shr  rol    ror//循环左右移
