@@ -165,6 +165,7 @@ nav:
   - Assembly:
       - asm1: assembly/asm1.md
       - asm2: assembly/asm2.md
+      - stk&Regi: assembly/stk.md
   - CodingProb:
       - P1010幂次方: codingprob/P1010.md
       - P1011车站: codingprob/P1011.md
