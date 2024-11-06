@@ -4,6 +4,65 @@
     [基本概念&分类](https://ckc-agc.bowling233.top/programming/common/notes/pointers/)
 
 
+### An Example
+
+!!! note inline end "一种指针数组典型用法"
+    存储并传递命令行参数，如main 函数声明 int main(int argc, char *argv[]) 中的 argv 参数
+
+在C和C++编程中，`int main(int argc, char *argv[])`是标准的main函数签名的一种，常用于接受命令行参数。这里的`argv`（argument vector）是一个指向字符串的指针数组，专门用于存储命令行提供的各个参数。
+
+### 解释参数:
+
+1. **`argc`（argument count）**:
+   - 表示命令行参数的个数。
+   - 其中第一个参数，即程序本身的名称，也算在内（一般是用来表示可执行文件的名称）。
+
+2. **`argv`（argument vector）**:
+   - 是一个数组，包含了命令行输入的参数。数组的每个元素都是一个指向字符的指针，即一个字符串。
+   - `argv[0]`通常是程序的名称。
+   - `argv[1]`到`argv[argc-1]`是用户输入的其他参数。
+
+### 典型用法：
+
+以下是一个简单的例子，演示如何使用这些参数：
+
+```c
+#include <stdio.h>
+
+int main(int argc, char *argv[]) {
+    printf("Number of arguments: %d\n", argc);
+
+    for (int i = 0; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);
+    }
+
+    return 0;
+}
+```
+
+### 工作原理
+- 当程序运行时，操作系统负责解析命令行输入并将其拆分为多个字符串，然后将这些字符串的地址传递给`argv`。
+- `argc`的值由操作系统提供，它表示了`argv`数组中的字符串数量。
+- 开发者可以通过`argv`读取和处理这些命令行参数以影响程序的行为。
+
+### 示例调用：
+
+如果在命令行（或终端）中运行此程序并提供一些参数，例如：
+
+```sh
+./my_program arg1 arg2
+
+Sample output:
+
+Number of arguments: 3
+Argument 0: ./my_program
+Argument 1: arg1
+Argument 2: arg2
+```
+
+`argv`数组的这种结构和用法允许运行中的程序基于不同的输入执行不同的操作，是一种基础的命令行编程机制。
+
+
 !!! info
     [指针易错题-tonycrane](https://note.tonycrane.cc/cs/pl/c_cpp/c/)
     [指针注意项-wu](https://wu-wu-u.github.io/Notebooks/cs/pl/c_cpp/C/c/#_4)
