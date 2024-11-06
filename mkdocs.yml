@@ -159,7 +159,7 @@ nav:
           - C/C++:
               - C语言: cs/pl/c_cpp/C/c.md
               - C++: cs/pl/c_cpp/CPP/cpp.md
-              - Pointer: cs/pl/c_cpp/C/Pointer.md
+              - Pointer: cs/pl/c_cpp/C/pointer.md
           - Python:
               - Index: cs/pl/python/index.md
               - CS61A: cs/pl/python/cs61a.md
