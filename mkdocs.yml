@@ -172,3 +172,5 @@ nav:
       - P1010幂次方: codingprob/P1010.md
       - P1011车站: codingprob/P1011.md
       - P1098字符串展开: codingprob/P1098.md
+  - Life:
+      - Optimistic: Life/optimistic.md
