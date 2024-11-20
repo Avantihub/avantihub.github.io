@@ -172,6 +172,7 @@ nav:
           - P1010幂次方: codingprob/P1010.md
           - P1011车站: codingprob/P1011.md
           - P1098字符串展开: codingprob/P1098.md
+          - Hello: codingprob/hello0.md  
     - Life:
           - Optimistic: Life/optimistic.md
           - Memory Folding: Life/24lec0.md
