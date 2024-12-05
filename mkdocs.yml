@@ -178,5 +178,5 @@ nav:
     - Life:
           - Optimistic: Life/optimistic.md
           - Memory Folding: Life/24lec0.md
-    - Math:
-          - Calculus: math/calculus/zjucalc24/quiz/anal_quiz2/index.html      
+    #- Math:
+          #- Calculus: math/calculus/zjucalc24/quiz/anal_quiz2/index.html      
