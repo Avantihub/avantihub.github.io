@@ -130,8 +130,8 @@ markdown_extensions:
     - sane_lists
     - pymdownx.magiclink
 
-extra_css:
-  - stylesheets/custom.css
+#extra_css:
+  #- stylesheets/custom.css
 
 extra_javascript:
   - javascripts/mathjax.js
