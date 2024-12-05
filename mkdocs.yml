@@ -130,9 +130,11 @@ markdown_extensions:
     - sane_lists
     - pymdownx.magiclink
 
+extra_css:
+  - stylesheets/custom.css
+
 extra_javascript:
-    - javascripts/mathjax.js
-    - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/mathjax.js
 
 plugins:
     - rss
