@@ -62,3 +62,47 @@ $ 1 \leq n \leq 1000 $
     - 可以直接将年分转化为月份，然后直接比较月份即可
     - M=12*(year2-year1)+month2-month1
     - 日期的状态简化为是否超出day0,True or False
+
+# After Reading Standard Solution
+
+- Bacause the present date is fixed,we can calc the exact date when the product is out of date.
+- it's easier than my sol:every time a new time comes,subtracted...be confusing
+- just make a cmp func,for every date,compare with the expedited date
+
+- **SUM: Make good use of the fixed date,make the problem easier**
+
+## Standard Solution
+
+```c
+#include<stdio.h>
+
+int n,y[1005],m[1005],d[1005],yy,mm,dd;
+int cmp(int y1,int m1,int d1,int y2,int m2,int d2)
+{
+	//if 1 earlier than 2 return 1,else 0
+	if(y1!=y2)return y1<y2;
+	if(m1!=m2)return m1<m2;
+	return d1<d2; 
+} 
+int main()
+{
+	scanf("%d-%d-%d",&yy,&mm,&dd);
+	yy-=2;
+    mm-=6;
+	if(mm<=0)
+	{
+		yy--;
+        mm+=12;
+	}//calc outdated time
+	scanf("%d",&n);
+	int minn=1,ans=0;
+	for(int i=1;i<=n;i++)
+    {
+		scanf("%d-%d-%d",&y[i],&m[i],&d[i]);
+		if(cmp(y[i],m[i],d[i],y[minn],m[minn],d[minn]))minn=i;//record earliest time 
+		if(cmp(y[i],m[i],d[i],yy,mm,dd))ans++;//lost date
+	}
+	printf("%d\n%d-%02d-%02d",ans,y[minn],m[minn],d[minn]);//formated output 
+	return 0;
+}
+```
