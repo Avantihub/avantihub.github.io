@@ -133,8 +133,9 @@ markdown_extensions:
 #extra_css:
   #- stylesheets/custom.css
 
-#extra_javascript:
-  #- javascripts/mathjax.js
+extra_javascript:
+    - https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js
+    - https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js
 
 plugins:
     - rss
