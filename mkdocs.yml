@@ -133,8 +133,8 @@ markdown_extensions:
 #extra_css:
   #- stylesheets/custom.css
 
-extra_javascript:
-  - javascripts/mathjax.js
+#extra_javascript:
+  #- javascripts/mathjax.js
 
 plugins:
     - rss
