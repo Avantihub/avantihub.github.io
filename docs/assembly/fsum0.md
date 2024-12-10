@@ -26,8 +26,8 @@ f proc near
    mov bx, 0
    mov cx, 0
 ;#1_begin--------
-   mov cx, [bp+4]   
-   inc cx           
+   mov cx, [bp+4]    ; 从堆栈获取参数n到cx作为循环计数器
+   inc cx            ; 因为loop指令会先减1再判断，所以这里先加1
 ;#1_end----------
    mov bx, [bp+6]
    xor ax, ax
@@ -35,7 +35,7 @@ next:
    add ax, cx
    loop next
 ;#2_begin------
-   mov [bx], ax    
+   mov [bx], ax     ; 将计算结果保存到*psum指向的内存位置
 ;#2_end--------
    pop bp
    ret
@@ -46,7 +46,7 @@ main:
    mov ds, ax
    mov ax, offset sum; ax = sum的偏移地址
 ;#3_begin------------
-   push ax        
+   push ax          ; 压入sum的地址作为第二个参数
 ;#3_end--------------
    push [n]     ; 传递n的值给函数f()
    call f
