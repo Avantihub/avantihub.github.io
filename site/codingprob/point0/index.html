@@ -1,0 +1,1754 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Avant1's Notes">
+      
+      
+        <meta name="author" content="Avant1">
+      
+      
+        <link rel="canonical" href="https://avantihub.github.io/codingprob/point0/">
+      
+      
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Point0 - Avant1's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M6 13h8l-3.5 3.5 1.42 1.42L17.84 12l-5.92-5.92L10.5 7.5 14 11H6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/timeline.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+    
+      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-typedef-struct-point-rect5" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Avant1&#39;s Notes" class="md-header__button md-logo" aria-label="Avant1's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Avant1's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Point0
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cs/" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../assembly/asm1/" class="md-tabs__link">
+          
+  
+    
+  
+  Assembly
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../P1010/" class="md-tabs__link">
+          
+  
+    
+  
+  CodingProb
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Life/optimistic/" class="md-tabs__link">
+          
+  
+    
+  
+  Life
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Avant1&#39;s Notes" class="md-nav__button md-logo" aria-label="Avant1's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    Avant1's Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cs/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Computer Science
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    编程语言
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            编程语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C/C++
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            C/C++
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/pl/c_cpp/C/c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C语言
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/pl/c_cpp/C/C09A/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C09A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/pl/c_cpp/CPP/cpp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/pl/c_cpp/Pointer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pointer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cs/pl/python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs/pl/python/cs61a.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS61A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Assembly
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assembly/asm1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asm1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assembly/asm2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asm2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assembly/stk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    stk&Regi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CodingProb
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CodingProb
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1010/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    P1010幂次方
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1011/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    P1011车站
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../P1098/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    P1098字符串展开
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hello0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Life
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Life
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Life/optimistic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimistic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Life/24lec0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Folding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-typedef-struct-point-rect5" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. typedef struct point *RECT[5];
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. typedef struct point *RECT[5];">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      解释：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-typedef-struct-point-rect5" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. typedef struct point (*RECT)[5];
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. typedef struct point (*RECT)[5];">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      解释：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      示例：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      区别总结：
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      进一步说明：
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      举个例子区分这两者：
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="举个例子区分这两者：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-typedef-struct-point-rect5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. typedef struct point *RECT[5]; 示例：
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-typedef-struct-point-rect5_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. typedef struct point (*RECT)[5]; 示例：
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量声明：
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析每个选项：
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="分析每个选项：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-ba-" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. b/a--
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-a-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. ~a | !b
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-ca" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. c^++a
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-d-a-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      D. d + a - b
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论：
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      变量声明：
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      逐个分析每个逻辑表达式：
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="逐个分析每个逻辑表达式：">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-s1-a-a-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      A. (s[1] &gt; 'a') || ~(a + b)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-b-a-s2-0" class="md-nav__link">
+    <span class="md-ellipsis">
+      B. (b &gt; a) &amp;&amp; (s[2] = '\0')
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-s-1-b-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      C. !(s + 1 &amp;&amp; b - a)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-a-b-a-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      D. !a &gt; b &amp;&amp; ~(a &gt; b)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      最终结论：
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Point0</h1>
+
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2310 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 57 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 8 分钟</p>
+</div>
+<p>这两种 <code>typedef</code> 声明在 C 语言中看似相似，但它们有不同的含义和用途。我们来逐个分析。</p>
+<h3 id="1-typedef-struct-point-rect5">1. <code>typedef struct point *RECT[5];</code><a class="headerlink" href="#1-typedef-struct-point-rect5" title="Permanent link">&para;</a></h3>
+<p>这个声明定义了一个类型别名 <code>RECT</code>，它表示一个包含 5 个元素的数组，其中每个元素是一个指向 <code>struct point</code> 类型的指针。</p>
+<h4 id="_1">解释：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>struct point</code>：表示一个结构体类型。</li>
+<li><code>*</code>：表示指针。</li>
+<li><code>RECT[5]</code>：表示一个包含 5 个元素的数组。</li>
+</ul>
+<p>因此，<code>typedef struct point *RECT[5];</code> 的意思是：
+- <code>RECT</code> 是一个类型，表示一个长度为 5 的数组，这个数组的每个元素都是一个指向 <code>struct point</code> 结构体的指针。</p>
+<p>换句话说，<code>RECT</code> 是一个数组类型，数组有 5 个元素，每个元素都是指向 <code>struct point</code> 类型的指针。</p>
+<h4 id="_2">示例：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="o">*</span><span class="n">RECT</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span><span class="w"> </span><span class="c1">// 定义类型 RECT</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">};</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">RECT</span><span class="w"> </span><span class="n">rects</span><span class="p">;</span><span class="w">  </span><span class="c1">// rects 是一个长度为 5 的数组，每个元素是指向 struct point 的指针</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">rects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="p">));</span><span class="w">  </span><span class="c1">// 分配内存并赋值给第一个元素</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">rects</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="p">));</span><span class="w">  </span><span class="c1">// 分配内存并赋值给第二个元素</span>
+</span></code></pre></div>
+<p>在这个例子中，<code>rects</code> 是一个长度为 5 的数组，每个数组元素是指向 <code>struct point</code> 类型的指针。</p>
+<h3 id="2-typedef-struct-point-rect5">2. <code>typedef struct point (*RECT)[5];</code><a class="headerlink" href="#2-typedef-struct-point-rect5" title="Permanent link">&para;</a></h3>
+<p>这个声明定义了一个类型别名 <code>RECT</code>，它表示一个指向包含 5 个 <code>struct point</code> 类型元素的数组的指针。</p>
+<h4 id="_3">解释：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>struct point</code>：表示一个结构体类型。</li>
+<li><code>(*RECT)</code>：表示一个指针（这里括号是必需的，表示 <code>RECT</code> 是一个指针）。</li>
+<li><code>[5]</code>：表示一个长度为 5 的数组。</li>
+</ul>
+<p>因此，<code>typedef struct point (*RECT)[5];</code> 的意思是：
+- <code>RECT</code> 是一个类型，表示一个指向包含 5 个 <code>struct point</code> 类型元素的数组的指针。</p>
+<p>换句话说，<code>RECT</code> 是一个指针类型，指向一个包含 5 个 <code>struct point</code> 结构体的数组。</p>
+<h4 id="_4">示例：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">RECT</span><span class="p">)[</span><span class="mi">5</span><span class="p">];</span><span class="w"> </span><span class="c1">// 定义类型 RECT</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">};</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">RECT</span><span class="w"> </span><span class="n">rects</span><span class="p">;</span><span class="w">  </span><span class="c1">// rects 是一个指向包含 5 个 struct point 元素的数组的指针</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span><span class="w">  </span><span class="c1">// 声明一个包含 5 个 struct point 的数组</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">rects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">points</span><span class="p">;</span><span class="w">  </span><span class="c1">// rects 指向 points 数组</span>
+</span></code></pre></div>
+<p>在这个例子中，<code>rects</code> 是一个指针，它指向一个包含 5 个 <code>struct point</code> 类型元素的数组。</p>
+<h3 id="_5">区别总结：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th><code>typedef struct point *RECT[5];</code></th>
+<th><code>typedef struct point (*RECT)[5];</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型含义</td>
+<td><code>RECT</code> 是一个长度为 5 的数组，数组的每个元素是指向 <code>struct point</code> 的指针。</td>
+<td><code>RECT</code> 是一个指向包含 5 个 <code>struct point</code> 的数组的指针。</td>
+</tr>
+<tr>
+<td>数据结构</td>
+<td>数组（<code>RECT</code> 是一个数组类型）。</td>
+<td>指针（<code>RECT</code> 是一个指针类型）。</td>
+</tr>
+<tr>
+<td>访问方式</td>
+<td>访问数组元素时直接通过数组下标，如 <code>rects[0]</code>，每个元素是指针。</td>
+<td>需要先解引用指针，再通过数组下标访问，如 <code>(*rects)[0]</code>。</td>
+</tr>
+<tr>
+<td>示例代码中的声明方式</td>
+<td><code>RECT rects;</code> — <code>rects</code> 是一个数组。</td>
+<td><code>RECT rects;</code> — <code>rects</code> 是一个指向数组的指针。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_6">进一步说明：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>typedef struct point *RECT[5];</code> 定义了一个数组，数组的每个元素是一个指向 <code>struct point</code> 的指针。这意味着你可以通过 <code>rects[i]</code> 来访问数组中的指针，并通过该指针访问 <code>struct point</code> 的数据。</li>
+<li><code>typedef struct point (*RECT)[5];</code> 定义了一个指向数组的指针。你可以通过 <code>*rects</code> 获取指向的数组，然后通过数组下标访问数组中的每个 <code>struct point</code> 元素。</li>
+</ul>
+<h3 id="_7">举个例子区分这两者：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h4 id="1-typedef-struct-point-rect5_1">1. <code>typedef struct point *RECT[5];</code> 示例：<a class="headerlink" href="#1-typedef-struct-point-rect5_1" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="o">*</span><span class="n">RECT</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span><span class="w">  </span><span class="c1">// RECT 是一个长度为 5 的数组，每个元素是指向 struct point 的指针</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">};</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">RECT</span><span class="w"> </span><span class="n">rects</span><span class="p">;</span><span class="w">  </span><span class="c1">// 声明一个 RECT 类型的变量 rects</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1">// 为每个指针分配内存并初始化</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="n">rects</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="p">));</span><span class="w">  </span><span class="c1">// 为每个指针分配内存</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">    </span><span class="n">rects</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">  </span><span class="c1">// 初始化数据</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="n">rects</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<h4 id="2-typedef-struct-point-rect5_1">2. <code>typedef struct point (*RECT)[5];</code> 示例：<a class="headerlink" href="#2-typedef-struct-point-rect5_1" title="Permanent link">&para;</a></h4>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">RECT</span><span class="p">)[</span><span class="mi">5</span><span class="p">];</span><span class="w">  </span><span class="c1">// RECT 是一个指向包含 5 个 struct point 元素的数组的指针</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">};</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">struct</span><span class="w"> </span><span class="nc">point</span><span class="w"> </span><span class="n">points</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span><span class="w">  </span><span class="c1">// 声明一个包含 5 个 struct point 的数组</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">RECT</span><span class="w"> </span><span class="n">rects</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">points</span><span class="p">;</span><span class="w">  </span><span class="c1">// rects 指向 points 数组</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1">// 使用 rects 访问数组中的元素</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="n">rects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">  </span><span class="c1">// 通过 rects 指针访问数组元素</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">rects</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+</span></code></pre></div>
+<p>通过这些例子，你可以看到，<code>typedef struct point *RECT[5];</code> 用于声明一个指向结构体的指针数组，而 <code>typedef struct point (*RECT)[5];</code> 用于声明一个指向结构体数组的指针。</p>
+<p>让我们详细分析一下每个选项，看看哪些运算是有效的，哪些是无效的。</p>
+<h3 id="_8">变量声明：<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">      </span><span class="c1">// 整型变量 a</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span><span class="w">   </span><span class="c1">// 字符型变量 b, 存储字符 &#39;1&#39;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kt">double</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span><span class="w"> </span><span class="c1">// 浮点型变量 c, 存储浮动数 1.0</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;1&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// 字符串指针变量 d, 存储字符串 &quot;1&quot;</span>
+</span></code></pre></div>
+<h3 id="_9">分析每个选项：<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h4 id="a-ba-">A. <code>b/a--</code><a class="headerlink" href="#a-ba-" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>b</code> 是字符型变量</strong>，其值是 <code>'1'</code>。在 C 语言中，字符型变量会自动转换为对应的 ASCII 码值。字符 <code>'1'</code> 的 ASCII 码值是 49。所以，<code>b</code> 的值是 <code>49</code>。</li>
+<li><strong><code>a</code> 是整型变量</strong>，其值为 <code>1</code>。</li>
+<li><strong><code>a--</code> 是自减操作</strong>，在此表达式中，<code>a--</code> 会返回 <code>a</code> 的当前值 <code>1</code>，然后将 <code>a</code> 自减为 <code>0</code>。但是由于 <code>a--</code> 是一个后置递减操作，因此对 <code>b/a--</code> 的计算没有影响（首先使用 <code>a</code> 的值 <code>1</code>，然后递减）。</li>
+<li>因此，<code>b/a--</code> 等价于 <code>49 / 1</code>，结果是 <code>49</code>（整数除法）。</li>
+</ul>
+<p>这意味着 <code>b/a--</code> 是一个合法的运算，<strong>此运算可以进行</strong>。</p>
+<h4 id="b-a-b">B. <code>~a | !b</code><a class="headerlink" href="#b-a-b" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>~a</code> 是按位取反</strong>，<code>a</code> 是整数 <code>1</code>，其二进制表示为 <code>00000001</code>（假设 8 位）。按位取反后会变为 <code>11111110</code>，即 <code>-2</code>（取反后的值）。</li>
+<li><strong><code>!b</code> 是逻辑非运算</strong>，<code>b</code> 是字符 <code>'1'</code>，在 C 中，非零的值（包括非零字符）被视为 <code>true</code>，因此 <code>!b</code> 等价于 <code>0</code>（因为 <code>b</code> 非零，<code>!b</code> 返回 <code>false</code>，即 <code>0</code>）。</li>
+<li><strong><code>~a | !b</code></strong> 是按位或运算，即 <code>-2 | 0</code>。按位或运算的结果是 <code>-2</code>。</li>
+</ul>
+<p>这意味着 <code>~a | !b</code> 是一个合法的运算，<strong>此运算可以进行</strong>。</p>
+<h4 id="c-ca">C. <code>c^++a</code><a class="headerlink" href="#c-ca" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>c</code> 是浮点型变量</strong>，其值是 <code>1.0</code>。</li>
+<li><strong><code>a</code> 是整型变量</strong>，其初始值为 <code>1</code>，<code>++a</code> 是前置递增操作，因此 <code>a</code> 会增加为 <code>2</code>，并且表达式会返回 <code>a</code> 的新值 <code>2</code>。</li>
+<li><strong><code>c^++a</code></strong> 中的 <code>^</code> 是按位异或运算符。按位异或运算符要求操作数必须是整数类型（或至少能够转换为整数类型），但 <code>c</code> 是一个 <code>double</code> 类型的浮点数。浮点数无法直接与整数类型进行按位操作，因此这里会发生类型不匹配的错误。</li>
+</ul>
+<p>这意味着 <code>c^++a</code> 是不合法的运算，<strong>此运算不能进行</strong>。</p>
+<h4 id="d-d-a-b">D. <code>d + a - b</code><a class="headerlink" href="#d-d-a-b" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>d</code> 是字符串指针</strong>，其值是 <code>"1"</code>，即指向字符串 <code>"1"</code> 的指针。</li>
+<li><strong><code>a</code> 是整型变量</strong>，其值为 <code>1</code>。</li>
+<li><strong><code>b</code> 是字符型变量</strong>，其值是 <code>'1'</code>，即 49（ASCII 码值）。</li>
+<li><strong><code>d + a</code></strong> 进行的是指针加法。<code>d</code> 是一个指向字符的指针，<code>a</code> 是 <code>1</code>，所以 <code>d + 1</code> 将使指针 <code>d</code> 向后移动一个字符位置。因此，<code>d + a</code> 实际上指向 <code>"1"</code> 字符串的第二个字符（即空字符 <code>\0</code>），所以 <code>d + a</code> 的结果是指向字符串结束符 <code>'\0'</code> 的指针。</li>
+<li><strong><code>d + a - b</code></strong> 这里的 <code>- b</code> 会将指针从 <code>d + a</code>（即指向 <code>'\0'</code>）向前移动 49 个位置。指针减去一个整数会导致指针位置的变化，但这并不涉及有效的地址范围和逻辑，因此这个表达式是合法的。</li>
+</ul>
+<p>这意味着 <code>d + a - b</code> 是一个合法的运算，<strong>此运算可以进行</strong>。</p>
+<h3 id="_10">结论：<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>A</strong> (<code>b/a--</code>) 是合法的运算。</li>
+<li><strong>B</strong> (<code>~a | !b</code>) 是合法的运算。</li>
+<li><strong>C</strong> (<code>c^++a</code>) 是不合法的运算，原因是浮点数和整数不能直接进行按位异或操作。</li>
+<li><strong>D</strong> (<code>d + a - b</code>) 是合法的运算。</li>
+</ul>
+<p>因此，<strong>不能进行的运算是 C 选项 (<code>c^++a</code>)</strong>。</p>
+<p>让我们逐一分析每个选项，找出在给定条件下值为 <code>1</code>（即 <code>真</code>）的逻辑表达式。</p>
+<h3 id="_11">变量声明：<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">       </span><span class="c1">// 整型变量 a，值为 2</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;2&#39;</span><span class="p">;</span><span class="w">    </span><span class="c1">// 字符型变量 b，值为 &#39;2&#39; (ASCII 码为 50)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;2&quot;</span><span class="p">;</span><span class="w">   </span><span class="c1">// 字符串指针变量 s，指向字符串 &quot;2&quot;</span>
+</span></code></pre></div>
+<h3 id="_12">逐个分析每个逻辑表达式：<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<h4 id="a-s1-a-a-b">A. <code>(s[1] &gt; 'a') || ~(a + b)</code><a class="headerlink" href="#a-s1-a-a-b" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>s[1]</code></strong>：<code>s</code> 是一个字符串 <code>"2"</code>，<code>s[1]</code> 是字符串的第二个字符。在 C 中，字符串是以字符数组的形式存储的，<code>s[1]</code> 对应于字符串 <code>"2"</code> 中的第二个字符 <code>'\0'</code>（即字符串结束符）。</li>
+<li><code>'s[1]</code> = '\0'，它的 ASCII 值是 0。</li>
+<li><strong><code>'a'</code></strong>：<code>'a'</code> 的 ASCII 值是 97。</li>
+<li><strong><code>s[1] &gt; 'a'</code></strong>：<code>0 &gt; 97</code> 结果为 <code>假</code>（即 <code>0</code>）。</li>
+<li><strong><code>a + b</code></strong>：<code>a = 2</code>，<code>b = '2'</code>（ASCII 值为 50）。所以 <code>a + b = 2 + 50 = 52</code>。</li>
+<li><strong><code>~(a + b)</code></strong>：按位取反操作。<code>52</code> 的二进制表示是 <code>00110100</code>，取反后为 <code>11001011</code>，即 <code>-53</code>。</li>
+<li>所以 <code>~(a + b)</code> 结果为 <code>-53</code>，这在逻辑运算中被视为 <code>真</code>（即非零值）。</li>
+<li><strong><code>(s[1] &gt; 'a') || ~(a + b)</code></strong>：<code>0 || -53</code>，逻辑或操作中只要有一个条件为真，结果为真。因此，最终结果是 <code>真</code>（即 <code>1</code>）。</li>
+</ul>
+<p><strong>结论：</strong> A 选项的值为 <code>1</code>。</p>
+<h4 id="b-b-a-s2-0">B. <code>(b &gt; a) &amp;&amp; (s[2] = '\0')</code><a class="headerlink" href="#b-b-a-s2-0" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>b &gt; a</code></strong>：<code>b = '2'</code>（ASCII 值 50），<code>a = 2</code>。所以 <code>b &gt; a</code> 是 <code>50 &gt; 2</code>，结果为 <code>真</code>（即 <code>1</code>）。</li>
+<li><strong><code>s[2] = '\0'</code></strong>：<code>s</code> 是指向字符串 <code>"2"</code> 的指针，<code>s[2]</code> 对应的是字符串 <code>"2"</code> 中的第三个字符。在 C 中，字符串是以 <code>\0</code> 结尾的，因此 <code>s[2]</code> 是 <code>\0</code>，赋值操作 <code>s[2] = '\0'</code> 将其保持为 <code>\0</code>。</li>
+<li>赋值操作 <code>s[2] = '\0'</code> 返回的是赋给 <code>s[2]</code> 的值，即 <code>\0</code>（即 <code>0</code>）。</li>
+<li><strong><code>(b &gt; a) &amp;&amp; (s[2] = '\0')</code></strong>：<code>1 &amp;&amp; 0</code>，逻辑与操作中只有两个条件都为真时结果才为真，因此，最终结果是 <code>假</code>（即 <code>0</code>）。</li>
+</ul>
+<p><strong>结论：</strong> B 选项的值为 <code>0</code>。</p>
+<h4 id="c-s-1-b-a">C. <code>!(s + 1 &amp;&amp; b - a)</code><a class="headerlink" href="#c-s-1-b-a" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>s + 1</code></strong>：<code>s</code> 是字符串指针，指向 <code>"2"</code>，<code>s + 1</code> 是指向字符串 <code>"2"</code> 中第二个字符的位置，即 <code>\0</code>。</li>
+<li><strong><code>s + 1 &amp;&amp; b - a</code></strong>：<code>s + 1</code> 指向字符串 <code>"2"</code> 中的第二个字符 <code>\0</code>（指针非空），因此在 C 中，<code>s + 1</code> 会被视为真（非零指针）。接下来进行 <code>b - a</code> 操作：<code>b = '2'</code>（ASCII 值 50），<code>a = 2</code>，所以 <code>b - a = 50 - 2 = 48</code>，也是非零值。</li>
+<li>由于 <code>s + 1</code> 和 <code>b - a</code> 都是非零值，所以 <code>s + 1 &amp;&amp; b - a</code> 的结果是 <code>真</code>（即 <code>1</code>）。</li>
+<li><strong><code>!(s + 1 &amp;&amp; b - a)</code></strong>：对 <code>真</code> 取逻辑非，结果是 <code>假</code>（即 <code>0</code>）。</li>
+</ul>
+<p><strong>结论：</strong> C 选项的值为 <code>0</code>。</p>
+<h4 id="d-a-b-a-b">D. <code>!a &gt; b &amp;&amp; ~(a &gt; b)</code><a class="headerlink" href="#d-a-b-a-b" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>!a</code></strong>：<code>a = 2</code>，<code>!a</code> 是对 <code>a</code> 取逻辑非，<code>!2</code> 结果为 <code>假</code>（即 <code>0</code>）。</li>
+<li><strong><code>!a &gt; b</code></strong>：<code>0 &gt; b</code>，<code>b = '2'</code>（ASCII 值为 50），所以 <code>0 &gt; 50</code> 结果为 <code>假</code>（即 <code>0</code>）。</li>
+<li><strong><code>a &gt; b</code></strong>：<code>a = 2</code>，<code>b = '2'</code>（ASCII 值为 50），所以 <code>a &gt; b</code> 结果为 <code>2 &gt; 50</code>，结果为 <code>假</code>（即 <code>0</code>）。</li>
+<li><strong><code>~(a &gt; b)</code></strong>：按位取反操作。<code>a &gt; b</code> 为 <code>假</code>（即 <code>0</code>），所以 <code>~(a &gt; b)</code> 是对 <code>0</code> 进行取反，结果为 <code>-1</code>。</li>
+<li><strong><code>!a &gt; b &amp;&amp; ~(a &gt; b)</code></strong>：<code>0 &amp;&amp; -1</code>，逻辑与操作中如果第一个条件是 <code>假</code>，结果就为 <code>假</code>，所以最终结果是 <code>假</code>（即 <code>0</code>）。</li>
+</ul>
+<p><strong>结论：</strong> D 选项的值为 <code>0</code>。</p>
+<h3 id="_13">最终结论：<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>A 选项的值为 1</strong>（真）。</li>
+<li><strong>B 选项的值为 0</strong>。</li>
+<li><strong>C 选项的值为 0</strong>。</li>
+<li><strong>D 选项的值为 0</strong>。</li>
+</ul>
+<p>因此，值为 1（真）的逻辑表达式是 <strong>A 选项</strong>。</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月28日 11:11:53</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月22日 14:16:40</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Wu-wu-u" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

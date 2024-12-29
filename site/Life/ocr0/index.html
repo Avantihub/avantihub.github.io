@@ -12,13 +12,9 @@
         <meta name="author" content="Avant1">
       
       
-        <link rel="canonical" href="https://avantihub.github.io/assembly/asm1/">
+        <link rel="canonical" href="https://avantihub.github.io/Life/ocr0/">
       
       
-        <link rel="prev" href="../../cs/pl/python/">
-      
-      
-        <link rel="next" href="../asm2/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../feed_rss_created.xml">
@@ -29,7 +25,7 @@
     
     
       
-        <title>asm1 - Avant1's Notes</title>
+        <title>Ocr0 - Avant1's Notes</title>
       
     
     
@@ -103,6 +99,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#1-tesseract-ocr" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -133,7 +134,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              asm1
+              Ocr0
             
           </span>
         </div>
@@ -268,13 +269,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../assembly/asm1/" class="md-tabs__link">
           
   
     
@@ -314,7 +313,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../Life/optimistic/" class="md-tabs__link">
+        <a href="../optimistic/" class="md-tabs__link">
           
   
     
@@ -770,10 +769,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -786,20 +783,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -810,7 +806,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Assembly
@@ -821,17 +817,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../assembly/asm1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -840,7 +829,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -853,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../asm2/" class="md-nav__link">
+      <a href="../../assembly/asm2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -874,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../stk/" class="md-nav__link">
+      <a href="../../assembly/stk/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1089,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Life/optimistic/" class="md-nav__link">
+      <a href="../optimistic/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1110,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Life/24lec0/" class="md-nav__link">
+      <a href="../24lec0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1149,6 +1137,86 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-tesseract-ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Tesseract OCR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-google-cloud-vision-ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Google Cloud Vision OCR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-microsoft-azure-computer-vision-ocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Microsoft Azure Computer Vision OCR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-easyocr" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. EasyOCR
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ocrspace" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. OCR.space
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-pdfco-ocr-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. PDF.co OCR API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-hugging-face-ocr-gpt" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Hugging Face OCR（结合 GPT）
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      总结
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1162,46 +1230,166 @@
                   
 
 
-  <h1>asm1</h1>
+  <h1>Ocr0</h1>
 
-<div class="language-asm highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">data</span><span class="w"> </span><span class="no">segment</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nf">a</span><span class="w"> </span><span class="no">db</span><span class="w"> </span><span class="err">&quot;</span><span class="no">ABC</span><span class="err">&quot;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nf">s</span><span class="w"> </span><span class="no">db</span><span class="w"> </span><span class="err">&quot;</span><span class="no">Hello$world</span><span class="p">!</span><span class="err">&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="no">Dh</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="no">Ah</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">;把s中字符串打印到屏幕上</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nf">data</span><span class="w"> </span><span class="no">ends</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nl">main:</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">   </span><span class="nf">mov</span><span class="w"> </span><span class="no">ax</span><span class="p">,</span><span class="w"> </span><span class="no">seg</span><span class="w"> </span><span class="no">s</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">   </span><span class="c1">;ax存放s的段地址</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">   </span><span class="nf">mov</span><span class="w"> </span><span class="no">ds</span><span class="p">,</span><span class="w"> </span><span class="no">ax</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">   </span><span class="nf">mov</span><span class="w"> </span><span class="no">bx</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
-</span></code></pre></div>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">putchar</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="o">==</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">&lt;</span><span class="n">div</span><span class="w"> </span><span class="n">markdown</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="w"> </span><span class="n">style</span><span class="o">=</span><span class="s">&quot;margin-top: -30px; font-size: 0.75em; opacity: 0.7;&quot;</span><span class="o">&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="o">:</span><span class="n">material</span><span class="o">-</span><span class="n">circle</span><span class="o">-</span><span class="n">edit</span><span class="o">-</span><span class="n">outline</span><span class="o">:</span><span class="w"> </span><span class="n">约</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="n">个字</span><span class="w"> </span><span class="o">:</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">solid</span><span class="o">-</span><span class="n">code</span><span class="o">:</span><span class="w"> </span><span class="mi">36</span><span class="w"> </span><span class="n">行代码</span><span class="w"> </span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">putchar</span><span class="p">(</span><span class="mi">0</span><span class="p">[</span><span class="n">s</span><span class="o">+</span><span class="n">i</span><span class="p">]);</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="mi">0</span><span class="w"> </span><span class="n">stands</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">pointer</span>
-</span></code></pre></div>
-<div class="language-asm highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">si</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="c1">;si存放s的偏移地址</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">ah</span><span class="p">,</span><span class="w"> </span><span class="mi">09</span><span class="no">h</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="c1">;功能号</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">dx</span><span class="p">,</span><span class="w"> </span><span class="no">si</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="c1">;dx存放s的偏移地址</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nf">int</span><span class="w"> </span><span class="mi">21</span><span class="no">h</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="c1">;调用dos的21h中断</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">    </span><span class="nf">mov</span><span class="w"> </span><span class="no">ah</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="no">ch</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="c1">;功能号</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nf">int</span><span class="w"> </span><span class="mi">21</span><span class="no">h</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="c1">;调用dos的21h中断</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="nf">end</span><span class="w"> </span><span class="no">main</span>
-</span></code></pre></div>
-<p>&amp;    |  ^   ~    &lt;&lt;  &gt;&gt; _rotl() _rotr()
-and  or xor not shl shr  rol    ror//循环左右移</p>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1141 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 59 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 5 分钟</p>
+</div>
+<p>OCR（Optical Character Recognition，光学字符识别）技术用于从图像中提取文本信息。随着人工智能的发展，许多基于 GPT 或类似技术的 OCR 工具变得易于上手，能够帮助用户快速地从扫描的文档、图片或手写内容中提取信息。</p>
+<p>以下是一些易上手的 OCR 工具，包括一些使用了 GPT 技术的工具：</p>
+<h3 id="1-tesseract-ocr">1. <strong>Tesseract OCR</strong><a class="headerlink" href="#1-tesseract-ocr" title="Permanent link">&para;</a></h3>
+<p>Tesseract 是一个开源的 OCR 引擎，被广泛使用，支持多种语言的文本识别。它虽然本身并不集成 GPT，但可以与 GPT 等技术结合，用于更准确的文本处理。</p>
+<ul>
+<li><strong>优点</strong>：</li>
+<li>免费且开源。</li>
+<li>支持多种语言，甚至可以识别手写文本（但准确率较低）。</li>
+<li>可以与 Python 和其他编程语言轻松集成。</li>
+<li><strong>如何使用</strong>：
+  1. 安装 Tesseract：<code>sudo apt-get install tesseract-ocr</code>
+  2. 使用 Python 库 <code>pytesseract</code> 调用 OCR 功能：
+     <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">pytesseract</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;sample_image.png&#39;</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">text</span> <span class="o">=</span> <span class="n">pytesseract</span><span class="o">.</span><span class="n">image_to_string</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</span></code></pre></div></li>
+<li><strong>链接</strong>：<a href="https://github.com/tesseract-ocr/tesseract">Tesseract OCR 官方网站</a></li>
+</ul>
+<h3 id="2-google-cloud-vision-ocr">2. <strong>Google Cloud Vision OCR</strong><a class="headerlink" href="#2-google-cloud-vision-ocr" title="Permanent link">&para;</a></h3>
+<p>Google 提供的 Cloud Vision API 支持强大的文本识别功能，可以识别图片中的文本，包括手写文本，并且具有强大的语言理解能力。它不直接使用 GPT，但可以结合 Google NLP API 来处理识别的文本。</p>
+<ul>
+<li><strong>优点</strong>：</li>
+<li>准确度高，支持多种语言。</li>
+<li>可以识别复杂的文本格式和手写文本。</li>
+<li>强大的 API 支持，易于集成。</li>
+<li><strong>如何使用</strong>：
+  1. 设置 Google Cloud 项目并启用 Cloud Vision API。
+  2. 安装 Google Cloud 客户端：<code>pip install google-cloud-vision</code>
+  3. 使用 Python 调用 API：
+     <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">google.cloud</span> <span class="kn">import</span> <span class="n">vision</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">client</span> <span class="o">=</span> <span class="n">vision</span><span class="o">.</span><span class="n">ImageAnnotatorClient</span><span class="p">()</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;sample_image.png&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">content</span> <span class="o">=</span> <span class="n">image_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">image</span> <span class="o">=</span> <span class="n">vision</span><span class="o">.</span><span class="n">Image</span><span class="p">(</span><span class="n">content</span><span class="o">=</span><span class="n">content</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">text_detection</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text_annotations</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
+</span></code></pre></div></li>
+<li><strong>链接</strong>：<a href="https://cloud.google.com/vision">Google Cloud Vision OCR</a></li>
+</ul>
+<h3 id="3-microsoft-azure-computer-vision-ocr">3. <strong>Microsoft Azure Computer Vision OCR</strong><a class="headerlink" href="#3-microsoft-azure-computer-vision-ocr" title="Permanent link">&para;</a></h3>
+<p>Microsoft 的 Azure 计算机视觉 API 也提供 OCR 服务，可以识别图片中的打印文本和手写文本。它也不直接集成 GPT，但可以与 GPT 技术结合来进一步理解和处理文本。</p>
+<ul>
+<li><strong>优点</strong>：</li>
+<li>提供高精度的文本识别，特别适合处理复杂的布局。</li>
+<li>支持多种语言和手写识别。</li>
+<li>可以与其他 Azure 服务（如文本分析）结合使用。</li>
+<li><strong>如何使用</strong>：
+  1. 设置 Azure 订阅并获取 API 密钥。
+  2. 安装 Azure 客户端库：<code>pip install azure-cognitiveservices-vision-computervision</code>
+  3. 使用 Python 调用 API：
+     <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span> <span class="nn">azure.cognitiveservices.vision.computervision</span> <span class="kn">import</span> <span class="n">ComputerVisionClient</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">azure.core.credentials</span> <span class="kn">import</span> <span class="n">AzureKeyCredential</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;&lt;your-key&gt;&quot;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">endpoint</span> <span class="o">=</span> <span class="s2">&quot;&lt;your-endpoint&gt;&quot;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">client</span> <span class="o">=</span> <span class="n">ComputerVisionClient</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">AzureKeyCredential</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;sample_image.png&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">read_in_stream</span><span class="p">(</span><span class="n">image_file</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></code></pre></div></li>
+<li><strong>链接</strong>：<a href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/">Azure OCR</a></li>
+</ul>
+<h3 id="4-easyocr">4. <strong>EasyOCR</strong><a class="headerlink" href="#4-easyocr" title="Permanent link">&para;</a></h3>
+<p>EasyOCR 是一个开源的 OCR 库，支持 80 多种语言，包括中文、英文、日文、韩文等。它基于深度学习模型，具有较高的准确性，并且易于安装和使用。</p>
+<ul>
+<li><strong>优点</strong>：</li>
+<li>支持 80 多种语言，适合多种应用场景。</li>
+<li>安装简单且使用方便。</li>
+<li>对手写文本和复杂布局有较好的识别能力。</li>
+<li><strong>如何使用</strong>：
+  1. 安装 EasyOCR：<code>pip install easyocr</code>
+  2. 使用 Python 调用：
+     <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">easyocr</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">reader</span> <span class="o">=</span> <span class="n">easyocr</span><span class="o">.</span><span class="n">Reader</span><span class="p">([</span><span class="s1">&#39;en&#39;</span><span class="p">])</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">result</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">readtext</span><span class="p">(</span><span class="s1">&#39;sample_image.png&#39;</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">for</span> <span class="n">detection</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">detection</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></div></li>
+<li><strong>链接</strong>：<a href="https://github.com/JaidedAI/EasyOCR">EasyOCR GitHub</a></li>
+</ul>
+<h3 id="5-ocrspace">5. <strong>OCR.space</strong><a class="headerlink" href="#5-ocrspace" title="Permanent link">&para;</a></h3>
+<p>OCR.space 是一个在线 OCR 服务，提供了 API 支持。它支持打印和手写文本的识别，可以直接将图像上传到它的服务器，获得文本内容。它本身不使用 GPT，但可以与 GPT 技术结合来处理识别出的文本。</p>
+<ul>
+<li><strong>优点</strong>：</li>
+<li>在线 OCR 服务，无需本地安装任何软件。</li>
+<li>支持多种语言和复杂的文本布局。</li>
+<li>提供免费和付费版本。</li>
+<li><strong>如何使用</strong>：
+  1. 访问 <a href="https://ocr.space/">OCR.space</a>，上传图像文件或使用 API。
+  2. 使用 API 获取结果：
+     <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">requests</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">api_key</span> <span class="o">=</span> <span class="s1">&#39;your_api_key&#39;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">image_path</span> <span class="o">=</span> <span class="s1">&#39;sample_image.png&#39;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.ocr.space/parse/image&#39;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">image_file</span><span class="p">:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">files</span><span class="o">=</span><span class="p">{</span><span class="n">image_path</span><span class="p">:</span> <span class="n">image_file</span><span class="p">},</span> <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;apikey&#39;</span><span class="p">:</span> <span class="n">api_key</span><span class="p">})</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</span></code></pre></div></li>
+<li><strong>链接</strong>：<a href="https://ocr.space/">OCR.space</a></li>
+</ul>
+<h3 id="6-pdfco-ocr-api">6. <strong>PDF.co OCR API</strong><a class="headerlink" href="#6-pdfco-ocr-api" title="Permanent link">&para;</a></h3>
+<p>PDF.co 提供强大的 PDF 和图像 OCR API，适用于需要从扫描的 PDF 或图像中提取文本的应用场景。它也没有直接集成 GPT，但可以与 GPT 结合分析和处理文本。</p>
+<ul>
+<li><strong>优点</strong>：</li>
+<li>支持从 PDF 文件、扫描图像中提取文本。</li>
+<li>提供易于集成的 API。</li>
+<li>支持多个文件格式（如 PDF、TIFF、PNG、JPEG）。</li>
+<li><strong>如何使用</strong>：
+  1. 访问 PDF.co 注册并获取 API 密钥。
+  2. 使用 API 提取文本：
+     <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">requests</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">api_key</span> <span class="o">=</span> <span class="s1">&#39;your_api_key&#39;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://api.pdf.co/v1/ocr&#39;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="s1">&#39;https://path/to/your/image_or_pdf&#39;</span><span class="p">}</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="s1">&#39;x-api-key&#39;</span><span class="p">:</span> <span class="n">api_key</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</span></code></pre></div></li>
+<li><strong>链接</strong>：<a href="https://pdf.co/ocr-api">PDF.co OCR</a></li>
+</ul>
+<h3 id="7-hugging-face-ocr-gpt">7. <strong>Hugging Face OCR（结合 GPT）</strong><a class="headerlink" href="#7-hugging-face-ocr-gpt" title="Permanent link">&para;</a></h3>
+<p>Hugging Face 提供的模型库不仅包含各种 NLP 和 GPT 模型，还包括一些 OCR 相关的深度学习模型。这些模型可以用于处理文本提取后的后续理解任务，例如文本摘要、问答等。</p>
+<ul>
+<li><strong>优点</strong>：</li>
+<li>结合 GPT 可以更好地处理和理解提取的文本。</li>
+<li>提供大量预训练模型，便于快速上手。</li>
+<li><strong>如何使用</strong>：
+  1. 访问 Hugging Face 获取 OCR 模型。
+  2. 使用 Hugging Face 提供的 Python API：
+     <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">ocr</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;image-to-text&quot;</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">result</span> <span class="o">=</span> <span class="n">ocr</span><span class="p">(</span><span class="s2">&quot;sample_image.png&quot;</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></code></pre></div></li>
+<li><strong>链接</strong>：<a href="https://huggingface.co/models">Hugging Face OCR Models</a></li>
+</ul>
+<h3 id="_1">总结<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>这些工具和 API 提供了丰富的 OCR 功能，适用于各种应用场景。从 Tesseract、EasyOCR 到 Google Cloud Vision 和 Microsoft Azure，用户可以选择不同的工具来满足自己的需求。对于一些更复杂的应用场景，结合 GPT 模型可以进一步增强文本的理解能力。</p>
 
 
 
@@ -1224,7 +1412,7 @@ and  or xor not shl shr  rol    ror//循环左右移</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月19日 10:00:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月28日 11:24:47</span>
   </span>
 
     
@@ -1234,7 +1422,7 @@ and  or xor not shl shr  rol    ror//循环左右移</p>
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年10月5日 16:01:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年12月28日 11:24:47</span>
   </span>
 
     
