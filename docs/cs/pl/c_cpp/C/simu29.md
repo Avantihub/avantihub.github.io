@@ -1,5 +1,9 @@
 ## 详细分析并判断对错:
 
+!!! info
+    - [原卷网址](https://www.luogu.com/article/y1z2mx28)
+    - [讲解](https://n.dingtalk.com/dingding/live-room/index.html?roomId=hS4XibfojPnSqNtA&from=LiveHome&liveUuid=cb0807f5-d97a-4882-88ad-dba6aff2101d)
+
 !!! warning
     - 在函数的参数传递中(如printf)，参数从右向左传递or计算
     -  看到`for while` 循环**注意循环末尾的分号** (`;`)
