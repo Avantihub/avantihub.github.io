@@ -21,5 +21,7 @@ int main()
     stu.d = 16.0;
     stu.e = 'a';
 
+    
+
     return 0;
 }
