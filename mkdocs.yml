@@ -161,6 +161,7 @@ nav:
                 - C/C++:
                       - C语言: cs/pl/c_cpp/C/c.md
                       - C09A: cs/pl/c_cpp/C/C09A.md
+                      - simu29: cs/pl/c_cpp/C/simu29.md
                       - C++: cs/pl/c_cpp/CPP/cpp.md
                       - Pointer: cs/pl/c_cpp/Pointer.md
                 - Python:
