@@ -4,8 +4,10 @@
 site_name: Avant1's Notes
 site_url: https://avantihub.github.io
 site_author: Avant1
-site_description: Avant1's Notes
-
+site_description: Avant1's Notebook
+repo_url: https://github.com/Avantihub/avantihub.github.io
+repo_name: Avantihub/avantihub.github.io
+copyright: Copyright &copy; 2024-2025 <a herf="https://github.com/Avantihub" target="_blank" rel="noopener">Avantihub</a>
 # [UI]
 # [top]
 theme:
