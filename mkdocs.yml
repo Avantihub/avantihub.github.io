@@ -47,6 +47,24 @@ theme:
     - search.highlight
     - content.code.copy
     - content.action.edit
+
+validation:
+  nav:
+    omitted_files: info
+    not_found: warn
+    absolute_links: info
+  links:
+    not_found: ignore
+    absolute_links: ignore
+    unrecognized_links: ignore
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Avantihub
+  analytics:
+    provider: custom
+    property: G-DYETCPM289
   
 
 extra_css:
@@ -59,7 +77,7 @@ extra_css:
 markdown_extensions:
   - toc:
       permalink: true
-      toc_depth: 5
+      toc_depth: 4
   - admonition #应用admonition
   - pymdownx.highlight:
       anchor_linenums: true
@@ -81,23 +99,14 @@ markdown_extensions:
   - pymdownx.critic 
 
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator:
-        !!python/name:material.extensions.emoji.to_svg 
-
-
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
-
-  # 允许使用任务清单即- []
   - pymdownx.tasklist:
       custom_checkbox: true
-
-  # 允许渲染公式，还需要添加mathjax配置和JavaScript
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#arithmatex
   - pymdownx.arithmatex:
       generic: true
-
   - def_list #使用各类表格
   - pymdownx.tasklist:
       custom_checkbox: true
