@@ -22,12 +22,12 @@ theme:
   palette:
     - scheme: default
       primary: teal
-      accent: orange
+      accent: teal
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: purple
+      primary: amber
       accent: amber
       toggle:
         icon: material/weather-sunny
