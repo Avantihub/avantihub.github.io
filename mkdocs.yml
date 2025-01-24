@@ -140,12 +140,15 @@ markdown_extensions:
   #- stylesheets/custom.css
 
 extra_javascript:
+    - javascripts/mathjax.js
+    - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
     - https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js
     - https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js
 
 plugins:
     - rss
     - search
+    - git-revision-date-localized
     - glightbox:
           width: 80%
     - git-revision-date-localized:
