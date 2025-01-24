@@ -1,7 +1,6 @@
-
 site_name: Avant1's Notes
 site_url: https://avantihub.github.io
-site_author: Avant1
+site_author: Avantihub
 site_description: Avant1的笔记本
 repo_url: https://github.com/Avantihub/avantihub.github.io
 repo_name: Avantihub/note
@@ -13,6 +12,7 @@ theme:
   name: material
   favicon: assets/images/github0.png
   language: zh
+  font: False
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
@@ -21,28 +21,29 @@ theme:
     logo: material/notebook-outline
   palette:
     - scheme: default
-      primary: Teal
+      primary: teal
       accent: orange
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: Purple
-      accent: Amber
+      primary: purple
+      accent: amber
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
   features:
-    - content.code.annotate
+    - toc.follow
+
     - navigation.tracking
     - navigation.tabs
     - navigation.top
     - navigation.indexes
-    
     - navigation.expand
     
     - search.suggest
     - search.highlight
+    - content.code.annotate
     - content.code.copy
     - content.action.edit
 
@@ -65,13 +66,11 @@ extra_css:
   - css/custom.css
   - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/katex.min.css
-#  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
-#  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-#  - https://cdn.tonycrane.cc/utils/katex.min.css
+
 markdown_extensions:
   - toc:
       permalink: true
-      toc_depth: 4
+      toc_depth: 5
   - admonition #应用admonition
   - pymdownx.highlight:
       anchor_linenums: true
@@ -80,7 +79,10 @@ markdown_extensions:
   - pymdownx.inlinehilite #添加了对内联代码块的语法突出显示的支持
   - pymdownx.snippets #使用简单语法将任意文件的内容嵌入到文档
   - pymdownx.superfences #允许代码和内容块任意嵌套，包括警告、选项卡、列表和所有其他元素
-
+#    custom_fences:
+#      - name: mermaid
+#        class: mermaid
+#        format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.details #admonition可以折叠
 
   - attr_list 
@@ -101,7 +103,7 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.arithmatex:
       generic: true
-  - def_list #使用各类表格
+  - def_list    
   - pymdownx.tasklist:
       custom_checkbox: true
   - meta
@@ -125,7 +127,6 @@ plugins:
       enable_creation_date: true
       exclude:
         - index.md
-        - writeups/AAA.md
   - changelog
   - statistics
 
