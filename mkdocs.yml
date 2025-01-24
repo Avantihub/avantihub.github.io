@@ -12,6 +12,8 @@ copyright: Copyright &copy; 2024-2025 <a herf="https://github.com/Avantihub" tar
 # [top]
 theme:
     name: material
+    #logo: assets/logo.jpg # 页面中顶部栏左侧图标
+    favicon: assets/github0.png
     # [切换日间模式和夜间模式]
     # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
     palette:
@@ -19,7 +21,7 @@ theme:
         - scheme: default
           # 主颜色
           # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color
-          primary: teal
+          primary: Purple
           # 链接等可交互元件的高亮色
           # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color
           accent: orange
