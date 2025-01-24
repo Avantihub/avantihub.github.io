@@ -61,10 +61,6 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Avantihub
-  analytics:
-    provider: custom
-    property: G-DYETCPM289
-  
 
 extra_css:
   - css/custom.css
