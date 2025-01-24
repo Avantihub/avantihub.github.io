@@ -1,0 +1,190 @@
+# [Info]
+# 左上角标题
+
+site_name: Avant1's Notes
+site_url: https://avantihub.github.io
+site_author: Avant1
+site_description: Avant1's Notebook
+repo_url: https://github.com/Avantihub/avantihub.github.io
+repo_name: Avantihub/avantihub.github.io
+copyright: Copyright &copy; 2024-2025 <a herf="https://github.com/Avantihub" target="_blank" rel="noopener">Avantihub</a>
+# [UI]
+# [top]
+theme:
+    name: material
+    #logo: assets/logo.jpg # 页面中顶部栏左侧图标
+    favicon: assets/images/github0.png
+    # [切换日间模式和夜间模式]
+    # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
+    palette:
+        # 日间模式
+        - scheme: default
+          # 主颜色
+          # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color
+          primary: Purple
+          # 链接等可交互元件的高亮色
+          # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color
+          accent: orange
+          toggle:
+              # 图标
+              icon: material/weather-night
+              # 鼠标悬浮提示
+              name: Switch to dark mode
+        # 夜间模式
+        - scheme: slate
+          primary: teal
+          accent: orange
+          toggle:
+              icon: material/weather-sunny
+              name: Switch to light mode
+    features:
+        - content.code.annotate
+        - navigation.tracking
+        # 使用 Tab 来进行分类
+        # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
+        - navigation.tabs
+        # 返回顶部的按钮，在上滑时出现
+        # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button
+        - navigation.top
+        # 给每个 Tab 添加一个 index.md，且在点击 Tab 时打开
+        # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages-with-section-index-pages
+        - navigation.indexes
+        # 打开 Tab 时左侧目录全部展开
+        # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-expansion
+        - navigation.expand
+        # 搜索输入一些字母时推荐补全整个单词
+        # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#search-suggestions
+        - search.suggest
+        # 搜索的关键词文章加入高亮
+        # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#search-highlighting
+        - search.highlight
+        # 可以通过按钮复制代码
+        # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-copy-button
+        - content.code.copy
+        # [点击按钮跳转至 GitHub 修改 Markdown 源文件]
+        # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+        - content.action.edit
+    language: zh # 一些提示性的文字会变成中文
+    icon:
+        # [添加 GitHub 仓库]
+        # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository-icon
+        repo: fontawesome/brands/github
+        annotation: material/arrow-right-circle
+        logo: material/notebook-outline
+        # [点击按钮跳转至 GitHub 修改 Markdown 源文件]
+        # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#code-actions
+
+extra:
+    social:
+        - icon: fontawesome/brands/github
+          link: https://github.com/Wu-wu-u
+extra_css:
+    - css/custom.css  
+    - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+    - https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/katex.min.css
+#    - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+#    - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+#    - https://cdn.tonycrane.cc/utils/katex.min.css
+markdown_extensions:
+    - toc:
+          permalink: true
+          toc_depth: 5
+    - admonition #应用admonition
+    - pymdownx.highlight:
+          anchor_linenums: true
+          line_spans: __span
+          pygments_lang_class: true
+    - pymdownx.inlinehilite #添加了对内联代码块的语法突出显示的支持
+    - pymdownx.snippets #使用简单语法将任意文件的内容嵌入到文档
+    - pymdownx.superfences #允许代码和内容块任意嵌套，包括警告、选项卡、列表和所有其他元素
+
+    - pymdownx.details #admonition可以折叠
+
+    - attr_list #允许使用特殊语法将 HTML 属性和 CSS 类添加到几乎每个Markdown 内联和块级元素。
+    - md_in_html
+    - pymdownx.keys #添加了一个简单的语法来允许呈现键盘按键和组合
+
+    # Caret 、 Mark和Tilde扩展添加了使用简单语法突出显示文本并定义下标和上标的功能。
+    - pymdownx.caret
+    - pymdownx.mark
+    - pymdownx.tilde
+
+    - pymdownx.critic #允许使用Critic 标记来突出显示文档中添加、删除或更新的部分，即跟踪 Markdown 语法的更改。
+
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator:
+              !!python/name:material.extensions.emoji.to_svg # 相关内容或者代码块可以分组展示
+
+
+    - pymdownx.tabbed:
+          alternate_style: true
+
+    # 允许使用任务清单即- []
+    - pymdownx.tasklist:
+          custom_checkbox: true
+
+    # 允许渲染公式，还需要添加mathjax配置和JavaScript
+    # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#arithmatex
+    - pymdownx.arithmatex:
+          generic: true
+
+    - def_list #使用各类表格
+    - pymdownx.tasklist:
+          custom_checkbox: true
+    - meta
+    - sane_lists
+    - pymdownx.magiclink
+
+#extra_css:
+  #- stylesheets/custom.css
+
+extra_javascript:
+    - https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js
+    - https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js
+
+plugins:
+    - rss
+    - search
+    - glightbox:
+          width: 80%
+    - git-revision-date-localized:
+          type: datetime
+          timezone: Asia/Shanghai
+          locale: zh
+          enable_creation_date: true
+          exclude:
+              - index.md
+              - writeups/AAA.md
+    - changelog
+    - statistics
+
+nav:
+    - Home:
+          - index.md
+    - Computer Science:
+          - cs/index.md
+          - 编程语言:
+                - C/C++:
+                      - C语言: cs/pl/c_cpp/C/c.md
+                      - C09A: cs/pl/c_cpp/C/C09A.md
+                      - simu29: cs/pl/c_cpp/C/simu29.md
+                      - C++: cs/pl/c_cpp/CPP/cpp.md
+                      - Pointer: cs/pl/c_cpp/Pointer.md
+                - Python:
+                      - Index: cs/pl/python/index.md
+                      - CS61A: cs/pl/python/cs61a.md
+    - Assembly:
+          - asm1: assembly/asm1.md
+          - asm2: assembly/asm2.md
+          - stk&Regi: assembly/stk.md
+    - CodingProb:
+          - P1010幂次方: codingprob/P1010.md
+          - P1011车站: codingprob/P1011.md
+          - P1098字符串展开: codingprob/P1098.md
+          - Hello: codingprob/hello0.md  
+    - Life:
+          - Optimistic: Life/optimistic.md
+          - Memory Folding: Life/24lec0.md
+    #- Math:
+          #- Calculus: math/calculus/zjucalc24/quiz/anal_quiz2/index.html      
