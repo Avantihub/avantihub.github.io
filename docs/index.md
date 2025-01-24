@@ -3,40 +3,48 @@
 
 ### 我想分享的东西
 
-- 一些CS小技能
-- ZJU课程学习笔记
+- CS小技能,notes
 - 刷题题解
 - 一些有趣的东西
 
 ---
 
-### 有用的链接
+### Useful Links
 
 !!! info
     - [CSdiy](https://csdiy.wiki/)
-    - [ZJU-CS-ALL-IN-ONE](https://isshikihugh.github.io/zju-cs-asio/)
-    - [Online编译器](https://onecompiler.com/)
+    - [ZJU-CS-ALLINONE](https://isshikihugh.github.io/zju-cs-asio/)
+    - [Online compiler](https://onecompiler.com/)
     - [OI wiki的Latex表](https://oi-wiki.org/intro/symbol/)。
 
 ---
     
 
 
-### Dalao的笔记
+### Links
 
 !!! info
-    - [Wu-wu-u](https://wu-wu-u.github.io/Notebooks/cs/pl/c_cpp/C/c/#_8)
     - [Tonycrane](https://note.tonycrane.cc/cs/pl/c_cpp/c/)
     - [Yang-xijie](https://yang-xijie.github.io/)
-    - [CS-fufu](https://csfufu.life/article/cf3b329a-7bee-4c6c-9694-c3a331e75dc9)
+    - [CSfufu](https://csfufu.life/article/cf3b329a-7bee-4c6c-9694-c3a331e75dc9)
+    - [Wu-wu-u](https://wu-wu-u.github.io/Notebooks/cs/pl/c_cpp/C/c/#_8)
 
 ---    
 
-### 计划学习~~咕咕咕~~
+    
 
-!!! info
-    - [命令行的艺术](https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md)    
-    - [gdb gef](https://ckc-agc.bowling233.top/programming_lecture/lecture1/lecture1/) 
-    - [CS61A](https://cs61a.org/)
+1.24-1.26计划：<input type="text" value="" style="width:100%;"><u></u></input>
+ 
 
----      
+
+- [ ] markdown latex autocomplete(https://zhuanlan.zhihu.com/p/739912764)
+
+- [ ] 学DL
+    - [ ] Hungyi Lee22(https://www.bilibili.com/video/BV1Wv411h7kN?p=18)
+    - [ ] at least Lec 6 GAN
+
+- [ ] 完成cs61a proj 4 scheme,更新笔记
+
+- [ ] 学latex和typst,完成寒假AI report
+
+---
