@@ -10,9 +10,9 @@ copyright: Copyright &copy; 2024-2025 <a herf="https://github.com/Avantihub" tar
 
 theme:
   logo: assets/images/github0.png
-  name: 'material'
+  name: material
   favicon: assets/images/github0.png
-  language: 'zh'
+  language: zh
   icon:
     previous: fontawesome/solid/angle-left
     next: fontawesome/solid/angle-right
@@ -98,8 +98,8 @@ markdown_extensions:
   - pymdownx.critic 
 
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
