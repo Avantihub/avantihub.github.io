@@ -12,7 +12,6 @@ theme:
   logo: assets/images/github0.png
   name: 'material'
   favicon: assets/images/github0.png
-  custom_dir: overrides
   language: 'zh'
   icon:
     previous: fontawesome/solid/angle-left
