@@ -9,7 +9,7 @@ copyright: Copyright &copy; 2024-2025 <a herf="https://github.com/Avantihub" tar
 
 
 theme:
-  logo: assets/images/github0.png
+  # logo: assets/images/github0.png
   name: material
   favicon: assets/images/github0.png
   language: zh
@@ -21,15 +21,14 @@ theme:
     logo: material/notebook-outline
   palette:
     - scheme: default
-      primary: White
+      primary: Teal
       accent: orange
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
-    # 夜间模式
     - scheme: slate
-      primary: White
-      accent: orange
+      primary: Purple
+      accent: Amber
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
