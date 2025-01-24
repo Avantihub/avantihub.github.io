@@ -144,7 +144,7 @@ nav:
               - Pointer: cs/pl/c_cpp/Pointer.md
           - Python:
               - Index: cs/pl/python/index.md
-              - CS61A: cs/pl/python/cs61a.md
+              - CS61A: cs/ML/Hungyi22/lec2.md
   - Assembly:
       - asm1: assembly/asm1.md
       - asm2: assembly/asm2.md
