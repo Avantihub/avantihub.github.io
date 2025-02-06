@@ -145,6 +145,8 @@ nav:
           - Python:
               - Index: cs/pl/python/index.md
               - CS61A: cs/pl/python/cs61a.md
+      - ML:        
+          - Image Classification: cs/ML/Hungyi22/HW3/dataaug.md
   - Assembly:
       - asm1: assembly/asm1.md
       - asm2: assembly/asm2.md

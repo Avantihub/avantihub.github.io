@@ -1,3 +1,8 @@
+# Q1 Data Augmentation
+
+## Why Data Augmentation is important in CNN?
+
+
 在使用卷积神经网络（CNN）进行图像分类时，**数据增强（Data Augmentation）** 是提升模型泛化能力、防止过拟合的核心策略之一。其必要性源于以下关键原因：
 
 ---
@@ -52,9 +57,11 @@
 
 ### **6. 实验验证**
 - **经典案例**：在ImageNet数据集上，数据增强可使Top-1准确率提升3-5%。  
-- **代码示例**（使用TensorFlow/Keras）：  
-  ```python
-  from tensorflow.keras.preprocessing.image import ImageDataGenerator
+- **代码示例**（使用TensorFlow/Keras）
+
+```python
+
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
   datagen = ImageDataGenerator(
       rotation_range=30,     # 随机旋转±30°
@@ -72,9 +79,47 @@
       target_size=(224, 224),
       batch_size=32
   )
-  ```
 
----
+```
+
 
 ### **总结**
 数据增强通过**低成本扩充训练数据**和**模拟现实复杂性**，显著提升CNN模型的泛化能力和鲁棒性。它是解决小样本学习、类别不均衡和过拟合问题的关键技术，尤其在医疗、农业、工业检测等数据稀缺领域不可或缺。合理选择增强策略（需结合具体任务调整），可最大化模型性能。
+
+## How to implement Data Augmentation in CNN?
+
+使用torchvision库中的transforms模块，可以方便地实现数据增强。
+torchvision.transforms 是 pytorch 中的图像预处理包，提供了常用的图像变换方式，可以通过 Compose 将多个变换步骤整合到一起
+
+1.官方的tutorial: https://pytorch.org/vision/stable/transforms.html
+
+2.前辈写好的绘图函数，可以方便地查看增强效果: https://blog.csdn.net/weixin_42426841/article/details/129903800
+
+3.了解compose，Compose 可以将 transforms 的方法组合起来，形成新的 transforms 去使用
+
+```python
+
+compose = T.Compose([
+    # 将图像缩放到固定的形状（高度=宽度=128）
+    T.Resize((128, 128)),
+    # 对图像应用高斯模糊，核大小为3，标准差为0.1
+    T.GaussianBlur(3, 0.1),
+    # 随机地改变图像的亮度和色调。亮度因子从[0.5, 1.5]之间均匀地选择，色调因子从[-0.3, 0.3]之间均匀地选择。
+    T.ColorJitter(brightness=0.5, hue=0.3),
+    # 随机反转图像，概率为0.5
+    T.RandomInvert(p=0.5),
+    # 随机应用一个变换列表，概率为0.6。
+    # 这里变换列表中只有一个变换，就是随机旋转图像，角度为0到60度之间
+    T.RandomApply(transforms=[T.RandomRotation(degrees=(0, 60))], p=0.6),
+])
+demo = [compose(orig_img) for i in range(5)]
+plot(demo)
+
+```
+
+
+### 如何通过medium baseline
+
+1. 通过增加数据增强的方法，如旋转、翻转、裁剪、缩放等，增加训练数据的多样性。
+
+2. 增加training epoch.先尝试12个epoch，如果模型没有过拟合，可以逐渐增加epoch的数量。
