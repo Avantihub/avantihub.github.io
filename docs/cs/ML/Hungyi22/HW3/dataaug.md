@@ -123,3 +123,80 @@ plot(demo)
 1. 通过增加数据增强的方法，如旋转、翻转、裁剪、缩放等，增加训练数据的多样性。
 
 2. 增加training epoch.先尝试12个epoch，如果模型没有过拟合，可以逐渐增加epoch的数量。
+
+### 我的尝试过程
+
+2.6 
+1.按要求加了data augmentation,但是acc只有0.3~0.35，可能是augmentation太多，难以收敛。或者是训练时间太短。
+
+2.尝试加入了增加epoch,从64增加到128 没有明显提升。
+
+3.怀疑是lr太大，尝试将lr从0.0003降到0.0001，但是没有明显提升。
+
+4.参考dalao的实现 https://github.com/Hoper-J/HUNG-YI_LEE_Machine-Learning_Homework/blob/master/HW03/HW03_Medium_0.70533.ipynb
+
+可能是augmentation方法太难学(),尝试将augmentation方法改为TrivialAugmentWide
+```python
+train_tfm = transforms.Compose([
+    # Resize the image into a fixed shape (height = width = 128)
+    transforms.Resize((128, 128)),
+    transforms.RandomChoice(transforms=[
+        # Apply TrivialAugmentWide data augmentation method
+        transforms.TrivialAugmentWide(),
+
+        # Return original image
+        transforms.Lambda(lambda x: x),
+    ],
+    p=[0.95, 0.05]),
+    # transforms.RandomHorizontalFlip(),
+    # transforms.RandomVerticalFlip(),
+    # transforms.RandomGrayscale(0.1),
+    # transforms.RandomSolarize(threshold=192.0),
+    # transforms.ColorJitter(brightness=.5,hue=0.5),
+    # transforms.RandomRotation(degrees=(0, 180)),
+    # transforms.RandomInvert(),
+    transforms.ToTensor(),
+])
+```
+
+这段代码是使用 `transforms.RandomChoice` 对图像进行数据增强（data augmentation）
+
+### 1. `transforms.RandomChoice(transforms=[...], p=[...])`
+`RandomChoice` 是一种随机选择多个变换方法中的一个应用到图像上的方法。你可以指定一个变换的列表（`transforms`），并为每个变换设置一个概率（`p`）。`RandomChoice` 会根据这些概率随机选择一个变换来应用。
+
+- **`transforms=[...]`**：这是一个包含多个变换方法的列表。每个变换会作用于输入图像。
+- **`p=[...]`**：这是与 `transforms` 中每个变换方法对应的概率。每个概率指定了该变换被选择的可能性。
+
+### 2. `transforms.TrivialAugmentWide()`
+这是一个常见的图像增强方法，它会应用一组预定义的常见增强操作（比如旋转、翻转、裁剪等），而不需要手动配置每种操作。`TrivialAugmentWide` 是一个简单而高效的增强方法，适用于多种场景。它的操作通常会相对较大幅度地改变图像的视觉效果，增强模型的鲁棒性。
+
+### 3. `transforms.Lambda(lambda x: x)`
+这个变换实际上没有对图像做任何改变。它只是简单地返回输入图像 `x`。可以将它视为一个占位符，意味着在某些情况下，你可能选择不对图像进行任何修改。
+
+### 4. `p=[0.95, 0.05]`
+这个参数定义了每个变换的选择概率。在这个例子中，`0.95` 是选择 `TrivialAugmentWide` 的概率，而 `0.05` 是选择 `Lambda(lambda x: x)`（即不做任何改变）的概率。
+
+
+
+### 总结
+这段代码的作用是：
+- 在大多数情况下（95% 的概率），应用 `TrivialAugmentWide` 进行数据增强。
+- 少数情况下（5% 的概率），直接返回原图，不做任何更改。
+
+### Summary
+
+经过24个epoch之后
+[ Train | 024/024 ] loss = 0.60261, acc = 0.80405 
+[ Valid | 024/024 ] loss = 1.06140, acc = 0.68441
+
+## Strong Baseline
+
+根据TA的文档
+Simple : 0.50099 
+Medium : 0.73207 Training Augmentation + Train Longer 
+Strong : 0.81872 Training Augmentation + Model Design + Train Looonger  (+Cross Validation + Ensemble) 
+Boss :  0.88446 Training Augmentation + Model Design +Test Time 
+Augmentation + Train Looonger  (+ Cross Validation + Ensemble) 
+
+
+1. 使用更复杂的模型，如ResNet、EfficientNet等，提升模型的表达能力。
