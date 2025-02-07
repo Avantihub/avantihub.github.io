@@ -135,6 +135,9 @@ nav:
       - index.md
   - Computer Science:
       - cs/index.md
+      - ML:
+          - 李宏毅22:
+              - Image Classification: cs/ML/Hungyi22/HW3/dataaug.md
       - 编程语言:
           - C/C++:
               - C语言: cs/pl/c_cpp/C/c.md
@@ -145,6 +148,7 @@ nav:
           - Python:
               - Index: cs/pl/python/index.md
               - CS61A: cs/pl/python/cs61a.md
+                
   - Assembly:
       - asm1: assembly/asm1.md
       - asm2: assembly/asm2.md
