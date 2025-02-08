@@ -10,7 +10,7 @@
 
 !!! info "2023Spring"
     本文档是对 ML2023Spring - HW01 的解析，主要包括任务目标、性能指标、数据解析、Sample code 主体部分解析、Baselines 等内容。
-    Reference: [Hoper-J's Note](https://github.com/Hoper-J/HUNG-YI_LEE_Machine-Learning_Homework/tree/master)
+    
 
 # 任务目标：
 
@@ -91,6 +91,8 @@ pip install kaggle
 kaggle competitions download -c ml2023spring-hw1
 unzip ml2023spring-hw1
 ```
+
+Reference: [Hoper-J's Note](https://github.com/Hoper-J/HUNG-YI_LEE_Machine-Learning_Homework/tree/master)
 
 # Sample code 主体解析
 

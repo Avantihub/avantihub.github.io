@@ -9,7 +9,7 @@
 
 !!! info "2023Spring"
     本文档是对 ML2023Spring - HW03 的解析，主要包括任务目标、性能指标、数据解析、Sample code 主体部分解析、Baselines 等内容。
-    Reference: [Hoper-J's Note](https://github.com/Hoper-J/HUNG-YI_LEE_Machine-Learning_Homework/tree/master)
+    
 
 # 任务目标
 
@@ -139,6 +139,8 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 ### **总结**
 数据增强通过**低成本扩充训练数据**和**模拟现实复杂性**，显著提升CNN模型的泛化能力和鲁棒性。它是解决小样本学习、类别不均衡和过拟合问题的关键技术，尤其在医疗、农业、工业检测等数据稀缺领域不可或缺。合理选择增强策略（需结合具体任务调整），可最大化模型性能。
+
+Reference: [Hoper-J's Note](https://github.com/Hoper-J/HUNG-YI_LEE_Machine-Learning_Homework/tree/master)
 
 ## How to implement Data Augmentation in CNN?
 
