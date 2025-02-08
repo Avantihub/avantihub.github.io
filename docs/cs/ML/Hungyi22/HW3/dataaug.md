@@ -1,3 +1,57 @@
+#  ML2023Spring - HW3 
+>
+>  [课程主页](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
+> 
+>  [课程视频](https://www.bilibili.com/video/BV1TD4y137mP/?spm_id_from=333.337.search-card.all.click&vd_source=436107f586d66ab4fcf756c76eb96c35)
+> 
+>  [Kaggle link](https://www.kaggle.com/t/86ca241732c04da99aca6490080bae73)
+
+
+!!! info "2023Spring"
+    本文档是对 ML2023Spring - HW03 的解析，主要包括任务目标、性能指标、数据解析、Sample code 主体部分解析、Baselines 等内容。
+    Reference: [Hoper-J's Note](https://github.com/Hoper-J/HUNG-YI_LEE_Machine-Learning_Homework/tree/master)
+
+# 任务目标
+
+使用 CNN 进行图像分类
+
+# 目录
+
+- [任务目标（图像分类）](#任务目标图像分类)
+- [性能指标（Metric）](#性能指标metric)
+- [数据解析](#数据解析)
+  - [数据下载（kaggle）](#数据下载kaggle)
+- [Gradescope (Report)](#gradescope-report)
+  - [Q1. Augmentation Implementation](#q1-augmentation-implementation)
+  - [Q2. Visual Representations Implementation](#q2-visual-representations-implementation)
+- [Baselines](#baselines)
+  - [Simple baseline (0.637)](#simple-baseline-0637)
+  - [Medium baseline (0.700)](#medium-baseline-0700)
+  - [Strong baseline (0.814)](#strong-baseline-0814)
+  - [Boss baseline (0.874)](#boss-baseline-0874)
+- [小坑](#小坑)
+- [参考链接](#参考链接)
+
+# 任务目标（图像分类）
+
+使用 CNN 进行图像分类
+
+# 性能指标（Metric）
+
+在测试集上的分类精度：
+$$
+Acc = \frac{pred==label}{len(data)} * 100\% \nonumber
+$$
+
+  # 数据解析
+
+- ./train (Training set): 图像命名的格式为 "x_y.png"，其中 x 是类别，含有 10,000 张被标记的图像
+- ./valid (Valid set): 图像命名的格式为 "x_y.png"，其中 x 是类别，含有 3,643 张被标记的图像
+- ./test (Testing set): 图像命名的格式为 "n.png"，n 是 id，含有 3,000 张未标记的图像
+
+数据来源于 food-11 数据集，共有 11 类
+
+
 # Q1 Data Augmentation
 
 ## Why Data Augmentation is important in CNN?

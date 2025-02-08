@@ -1,20 +1,21 @@
->  ML2023Spring - HW01 相关信息：
->  
+#  ML2023Spring - HW1 
+
+
 >  [课程主页](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
 >  
 >  [课程视频](https://www.bilibili.com/video/BV1TD4y137mP/?spm_id_from=333.337.search-card.all.click&vd_source=436107f586d66ab4fcf756c76eb96c35)
 >  
 >  [Kaggle link](https://www.kaggle.com/t/a339b77fa5214978bfb8dde62d3151fe)
->  
->  [Sample code](https://colab.research.google.com/drive/1BESEu-l3qrGRULoATuXnWasUNuUlVF1Z?fbclid=IwAR1FrjUsp4rTy5PPFV-aWq6IG_Z44mFT4VH5e1lIhlekFl7fAvxGRCTCyR0#scrollTo=QoWPUahCtoT6)
->  
->  [HW01 视频]( https://www.bilibili.com/video/BV1TD4y137mP/?p=14&share_source=copy_web&vd_source=e46571d631061853c8f9eead71bdb390)
->  
->  [HW01 PDF](https://speech.ee.ntu.edu.tw/~hylee/ml/ml2023-course-data/HW01.pdf)
+
 
 !!! info "2023Spring"
     本文档是对 ML2023Spring - HW01 的解析，主要包括任务目标、性能指标、数据解析、Sample code 主体部分解析、Baselines 等内容。
     Reference: [Hoper-J's Note](https://github.com/Hoper-J/HUNG-YI_LEE_Machine-Learning_Homework/tree/master)
+
+# 任务目标：
+
+- Regression: COVID-19 daily cases prediction
+- 训练/测试数据大小：3009/997（每一年的homework 可能不同）
 
 # 目录
 * [任务目标（回归）](#任务目标回归)
@@ -29,10 +30,7 @@
    * [Training Loop](#training-loop)
 * [Baselines](#baselines)
 
-# 任务目标（回归）：
 
-- COVID-19 daily cases prediction
-- 训练/测试数据大小：3009/997（每一年的homework 可能不同）
 
 # 性能指标（Metric）
 

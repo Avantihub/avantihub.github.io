@@ -1,19 +1,23 @@
->  ML2023Spring - HW2 相关信息：
->
+#  ML2023Spring - HW2 
+
+
 >  [课程主页](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
 >
 >  [课程视频](https://www.bilibili.com/video/BV1TD4y137mP/?spm_id_from=333.337.search-card.all.click&vd_source=436107f586d66ab4fcf756c76eb96c35)
 >
 >  [Kaggle link](https://www.kaggle.com/t/03ac116596a247219b5a8d7a8e2b800e)
->
->  [Sample code](https://colab.research.google.com/drive/1wzeiVy2g7HpSjlidUr0Gi50NnHBWTkvN#scrollTo=KVUGfWTo7_Oj)
->
->  [HW02 视频](https://www.bilibili.com/video/BV1TD4y137mP/?p=26&share_source=copy_web&vd_source=e46571d631061853c8f9eead71bdb390)
->
->  [HW02 PDF](https://speech.ee.ntu.edu.tw/~hylee/ml/ml2023-course-data/HW02+聽測.pdf)
->
->  P.S. 即便 kaggle 上的时间已经截止，你仍然可以在上面提交和查看分数。但需要注意的是：在 kaggle 截止日期前你应该选择两个结果进行最后的Private评分。
->  每年的数据集size和feature并不完全相同，但基本一致，过去的代码仍可用于新一年的 Homework。
+
+!!! info "2023Spring"
+    本文档是对 ML2023Spring - HW02 的解析，主要包括任务目标、性能指标、数据解析、Sample code 主体部分解析、Baselines 等内容。
+    Reference: [Hoper-J's Note](https://github.com/Hoper-J/HUNG-YI_LEE_Machine-Learning_Homework/tree/master)
+
+# 任务目标
+
+- Phoneme Classification 音素分类（识别）
+  ![源自 HW02 PDF](https://blogby.oss-cn-guangzhou.aliyuncs.com/20230313162349.png)
+- 训练/测试数据大小：3429/857（2116794/527364 frames）每个 frames 25ms，相邻 frames 间隔 10ms，1s 可以划分出 100 个frames，单个 frames 最后被处理为 39 维的 MFCC (**Mel Frequency Cepstral Coefficients**)
+  ![源自 HW02 PDF](https://blogby.oss-cn-guangzhou.aliyuncs.com/20230313163334.png)
+- Label：41，对应 phoneme
 
 # 目录
 * [任务目标（分类）](#任务目标分类)
@@ -61,13 +65,7 @@
 * [参考链接](#参考链接)
 
 
-# 任务目标（分类）
 
-- Phoneme Classification 音素分类（识别）
-  ![源自 HW02 PDF](https://blogby.oss-cn-guangzhou.aliyuncs.com/20230313162349.png)
-- 训练/测试数据大小：3429/857（2116794/527364 frames）每个 frames 25ms，相邻 frames 间隔 10ms，1s 可以划分出 100 个frames，单个 frames 最后被处理为 39 维的 MFCC (**Mel Frequency Cepstral Coefficients**)
-  ![源自 HW02 PDF](https://blogby.oss-cn-guangzhou.aliyuncs.com/20230313163334.png)
-- Label：41，对应 phoneme
 
 # Metric
 
