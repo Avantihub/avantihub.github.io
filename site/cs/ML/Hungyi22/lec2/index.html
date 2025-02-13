@@ -6,10 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Avant1's Notebook">
+        <meta name="description" content="Avant1的笔记本">
       
       
-        <meta name="author" content="Avant1">
+        <meta name="author" content="Avantihub">
       
       
         <link rel="canonical" href="https://avantihub.github.io/cs/ML/Hungyi22/lec2/">
@@ -20,7 +20,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../../assets/github0.png">
+      <link rel="icon" href="../../../../assets/images/github0.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
@@ -49,21 +49,15 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
     
     
       <link rel="stylesheet" href="../../../../css/timeline.css">
     
-      <link rel="stylesheet" href="https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css">
+      <link rel="stylesheet" href="../../../../css/custom.css">
     
-      <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
     
-      <link rel="stylesheet" href="https://cdn.tonycrane.cc/utils/katex.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/katex.min.css">
     
     <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -91,13 +85,18 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="Purple" data-md-color-accent="orange">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#proj-4-scheme" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -142,7 +141,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="Purple" data-md-color-accent="orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
@@ -152,7 +151,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
     
       <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
@@ -180,7 +179,7 @@
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="查找">
         
@@ -214,7 +213,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
-    Avantihub/avantihub.github.io
+    Avantihub/note
   </div>
 </a>
       </div>
@@ -371,7 +370,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
   </div>
   <div class="md-source__repository">
-    Avantihub/avantihub.github.io
+    Avantihub/note
   </div>
 </a>
     </div>
@@ -451,6 +450,8 @@
       
         
       
+        
+      
     
     
       
@@ -526,7 +527,7 @@
             
   
   <span class="md-ellipsis">
-    编程语言
+    ML
   </span>
   
 
@@ -535,6 +536,252 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            ML
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    李宏毅22/23
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            李宏毅22/23
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hw1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hw2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Phoneme Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HW3/dataaug/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Train
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Train
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Train/Transfer_Curri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfer&Curriculum learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    编程语言
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             编程语言
           </label>
@@ -571,10 +818,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -585,8 +832,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_1">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
             <span class="md-nav__icon md-icon"></span>
             C/C++
           </label>
@@ -732,7 +979,7 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_2" >
         
           
           
@@ -748,14 +995,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
             <span class="md-nav__icon md-icon"></span>
             Python
           </label>
@@ -1179,6 +1426,38 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#proj-4-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proj 4 Scheme
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proj 4 Scheme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#problem-3-implement-the-missing-part-of-scheme_eval" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem 3 Implement the missing part of scheme_eval
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1202,9 +1481,6 @@
 
   <h1>Lec2</h1>
 
-<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 27 个字 </p>
-</div>
 <p><strong>(Link)[<a href="https://www.bilibili.com/video/BV1Wv411h7kN?p=18">https://www.bilibili.com/video/BV1Wv411h7kN?p=18</a>]</strong></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1216,6 +1492,82 @@
 </li>
 </ul>
 </div>
+<h2 id="proj-4-scheme">Proj 4 Scheme<a class="headerlink" href="#proj-4-scheme" title="Permanent link">&para;</a></h2>
+<h3 id="problem-3-implement-the-missing-part-of-scheme_eval">Problem 3 Implement the missing part of scheme_eval<a class="headerlink" href="#problem-3-implement-the-missing-part-of-scheme_eval" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">scheme_eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">_</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> <span class="c1"># Optional third argument is ignored</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Evaluate Scheme expression EXPR in Frame ENV.</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">        scheme_eval 在给定环境中求值一个 Scheme 表达式。</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">        scheme_eval 将评估重定向至在 scheme_forms.py 中找到的适当 do_?_form 函数</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">        scheme_apply 对某些参数应用一个过程。</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    &gt;&gt;&gt; expr = read_line(&#39;(+ 2 2)&#39;)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">    &gt;&gt;&gt; expr</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="sd">    Pair(&#39;+&#39;, Pair(2, Pair(2, nil)))</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="sd">    &gt;&gt;&gt; scheme_eval(expr, create_global_frame())</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="sd">    4</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="c1"># 1. 处理原子符号 (Scheme 符号或自我评估的表达式)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="o">&lt;</span><span class="n">div</span> <span class="n">markdown</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;margin-top: -30px; font-size: 0.75em; opacity: 0.7;&quot;</span><span class="o">&gt;</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">:</span><span class="n">material</span><span class="o">-</span><span class="n">circle</span><span class="o">-</span><span class="n">edit</span><span class="o">-</span><span class="n">outline</span><span class="p">:</span> <span class="n">约</span> <span class="mi">1805</span> <span class="n">个字</span> <span class="p">:</span><span class="n">fontawesome</span><span class="o">-</span><span class="n">solid</span><span class="o">-</span><span class="n">code</span><span class="p">:</span> <span class="mi">41</span> <span class="n">行代码</span> <span class="p">:</span><span class="n">material</span><span class="o">-</span><span class="n">clock</span><span class="o">-</span><span class="n">time</span><span class="o">-</span><span class="n">two</span><span class="o">-</span><span class="n">outline</span><span class="p">:</span> <span class="n">预计阅读时间</span> <span class="mi">7</span> <span class="n">分钟</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="k">if</span> <span class="n">scheme_symbolp</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        <span class="k">return</span> <span class="n">env</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span>  <span class="c1"># 查找符号在环境中的值</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="c1"># 2. 处理自我评估的表达式</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="k">elif</span> <span class="n">self_evaluating</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        <span class="k">return</span> <span class="n">expr</span>  <span class="c1"># 直接返回表达式（例如数字、字符串等）</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>    <span class="c1"># 3. 处理非原子表达式（即列表）</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">scheme_listp</span><span class="p">(</span><span class="n">expr</span><span class="p">):</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="k">raise</span> <span class="n">SchemeError</span><span class="p">(</span><span class="s1">&#39;malformed list: </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">repl_str</span><span class="p">(</span><span class="n">expr</span><span class="p">)))</span>  <span class="c1"># 如果不是列表，抛出错误</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="n">first</span><span class="p">,</span> <span class="n">rest</span> <span class="o">=</span> <span class="n">expr</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="n">expr</span><span class="o">.</span><span class="n">rest</span>  <span class="c1"># 获取表达式的第一个元素和其余部分</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="c1"># 4. 如果第一个元素是特殊形式（例如 `if`, `define` 等），使用相应的处理函数</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="k">if</span> <span class="n">scheme_symbolp</span><span class="p">(</span><span class="n">first</span><span class="p">)</span> <span class="ow">and</span> <span class="n">first</span> <span class="ow">in</span> <span class="n">scheme_forms</span><span class="o">.</span><span class="n">SPECIAL_FORMS</span><span class="p">:</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="k">return</span> <span class="n">scheme_forms</span><span class="o">.</span><span class="n">SPECIAL_FORMS</span><span class="p">[</span><span class="n">first</span><span class="p">](</span><span class="n">rest</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>  <span class="c1"># 调用特殊形式的处理函数</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>        <span class="c1"># 5. 一般的组合式，首先求值操作符，然后求值参数，最后应用操作符到参数</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="c1"># 假设我们有表达式 (+ 2 2)，</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="c1"># first = +，这时 procedure = scheme_eval(first, env) 会返回 `+` 操作符，</span>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>        <span class="c1"># rest = (2 2)，这时 args = rest.map(lambda exp: scheme_eval(exp, env)) 会返回 [2, 2]，即两个数字 2。</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        <span class="c1"># 最后，scheme_apply(procedure, args, env) 会执行 `+` 操作符，传入参数 [2, 2]，结果为 4</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>        <span class="c1"># BEGIN PROBLEM 3</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>        <span class="n">procedure</span> <span class="o">=</span> <span class="n">scheme_eval</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>  <span class="c1"># 求值操作符</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>        <span class="n">args</span> <span class="o">=</span> <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">exp</span><span class="p">:</span> <span class="n">scheme_eval</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="n">env</span><span class="p">))</span>  <span class="c1"># 求值所有参数</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>        <span class="k">return</span> <span class="n">scheme_apply</span><span class="p">(</span><span class="n">procedure</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">env</span><span class="p">)</span>  <span class="c1"># 应用操作符到参数</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>        <span class="c1"># END PROBLEM 3</span>
+</span></code></pre></div>
+<p>核心速览</p>
+<p>MVPaint是一种用于3D绘画的同步多视图扩散框架，能够生成高分辨率、无缝的纹理，并强调多视图一致性。</p>
+<p>研究背景</p>
+<p>·  研究问题：3D纹理生成是3D资产制作流程中的关键步骤，它增强了3D资产的视觉吸引力和多样性。尽管在文本到纹理（T 2T）生成方面取得了进展，但现有方法常常因为局部不连续性、多视图间不一致以及对UV展开结果的过度依赖而产生次优结果。
+·  研究难点：在3D纹理生成中，确保多视图一致性是一个挑战，因为局部风格不连续性和大量接缝的存在。此外，生成多样化的纹理细节，避免过于平滑的纹理，同时实现高分辨率输出，以及开发不依赖UV展开结果的方法以实现稳健的自动化生成，都是当前研究中需要解决的问题。
+·  文献综述：为了应对这些挑战，研究者们提出了各种方法，如利用2D扩散先验来指导生成过程，使用条件控制（例如深度）来产生更合适的纹理。TEXTure和Text 2Tex通过迭代渲染深度图来生成高质量图像。SyncMVD结合了多视图单步去噪和UV空间同步，但其重用的注意力过程仅限于附近视图，经常导致Janus问题。Paint 3D和Meta 3D TextureGen采用UV位置图进行UV修复和增强，但这些工具严重依赖连续的网格UV展开。因此，研究者们提出了MVPaint，这是一个粗到细的3D纹理生成框架，能够在减少对UV展开质量依赖的同时，生成高保真、无缝的3D纹理，并确保多视图一致性。</p>
+<p>MVPaint框架</p>
+<p>MVPaint框架主要包括三个关键模块：</p>
+<p>1. 同步多视图生成（SMG）：通过使用具有交叉注意力和UV同步的多视图扩散模型，基于给定的纹理指令启动3D纹理生成，有效避免Janus问题，并在低分辨率下产生高度一致的多视图图像。
+2. 空间感知3D修复（S 3I）：确保第一阶段未观察到的区域的完整3D纹理，通过考虑从网格表面均匀采样的3D点之间的空间关系来解决3D空间中的修复过程。
+3. UV细化（UVR）模块：包括一系列在UV空间中定制的纹理增强操作。UVR首先使用超分辨率模块将UV图放大到2K分辨率，然后引入空间感知接缝平滑算法（SSA）来修正空间不连续的纹理，特别是修复由UV展开引起的接缝。</p>
+<p>为了评估T 2T生成，研究者们建立了两个基准：Objaverse T 2T基准和GSO T 2T基准。Objaverse T 2T基准包括从Objaverse数据集中精选的1000个高质量3D网格，而GSO T 2T基准则利用GSO数据集中的所有1032个3D模型来评估T 2T模型的泛化能力。通过在这些基准上的广泛实验结果表明，MVPaint能够超越现有的最先进方法，显著减少失败的生成情况，如缺失区域、大不一致、过度平滑和Janus问题。</p>
+<p>MVPaint框架</p>
+<p>·  多视图同步生成（SMG）：MVPaint使用同步多视图生成（SMG）模型，该模型利用跨注意力机制和UV同步，基于给定的纹理指令初始化3D纹理生成，有效避免了Janus问题，确保了低分辨率下的多视图一致性。
+·  空间感知3D修复（S 3I）：为了确保完整的3D纹理，特别是对于第一阶段未观察到的区域，提出了空间感知3D修复（S 3I）方法，通过考虑从网格表面均匀采样的3D点之间的空间关系来解决3D空间中的修复过程。
+·  UV细化（UVR）模块：引入了UV细化（UVR）模块，包括一系列在UV空间中进行的纹理增强操作。UVR首先使用超分辨率模块将UV图上采样到2K分辨率，然后引入空间感知缝合算法（SSA）来修正空间不连续的纹理，特别是修复由UV展开引起的缝隙。</p>
+<p>相关工作</p>
+<p>·  多视图生成：从不同输入（如文本、图像和网格）生成一致的多视图图像，已成为一个关键研究领域，这使得创建在不同视角下外观一致的3D资产成为可能。
+·  3D纹理生成：传统上依赖于手动或程序化技术，这些技术对于基本应用有效，但缺乏复杂性。随着全局优化技术的引入，可以生成更详细、更匹配3D模型几何形状的纹理。基于AI的3D纹理生成最初由生成对抗网络（GANs）主导，随后转向潜在扩散模型（LDM），其中Stable Diffusion等模型显示出有希望的结果。</p>
+<p>实验</p>
+<p>·  实施细节：使用MVDream作为T 2MV的基模型，并添加控制模块Tp进行训练。对于同步细化，选择SDXL作为I 2I细化D₁₂i的基础模型，部署了两个预训练的ControlNets，Tt和Tg。
+·  文本指导的3D纹理生成：为了全面评估任意类型网格的文本到纹理（T 2T）生成，建立了两个评估基准：Objaverse T 2T基准和GSO T 2T基准。使用常见的生成指标：Fréchet Inception Distance (FID)、Kernel Inception Distance (KID)和CLIP得分来评估图像分布、质量和丰富度。
+·  消融研究：为了验证SMG模块的有效性，进行了详细的消融研究，包括T 2MV扩散模型、多视图同步和几何感知细化。此外，还验证了3D修复和缝合操作的有效性。</p>
+<p>应用</p>
+<p>·  生成多样化的3D纹理：基于文本指令，MVPaint能够生成具有大变化的3D纹理。例如，对于单一独角兽模型，MVPaint能够生成38种不同的3D纹理。
+·  纹理AI生成的3D网格：MVPaint独立于UV展开质量生成3D纹理，即使AI生成的3D网格包含轻微的瑕疵，也能生成高质量的纹理。</p>
+<p>总体结论</p>
+<p>·  MVPaint框架：MVPaint是一个综合框架，用于从文本生成3D纹理，包括三个关键阶段：同步多视图生成、3D空间纹理修复和UV细化。通过广泛的实验，MVPaint一致地生成高质量的3D纹理，超越了现有的最先进的纹理方法。
+·  研究意义：MVPaint的提出，不仅解决了3D纹理生成中的一致性和无缝性问题，还减少了对UV展开质量的依赖，为未来3D纹理生成研究提供了重要的贡献。</p>
 
 
 
@@ -1238,7 +1590,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年1月24日 13:21:44</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月6日 19:40:07</span>
   </span>
 
     
@@ -1303,7 +1655,7 @@
       
       
     
-    <a href="https://github.com/Wu-wu-u" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+    <a href="https://github.com/Avantihub" target="_blank" rel="noopener" title="github.com" class="md-social__link">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
@@ -1319,14 +1671,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
       <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

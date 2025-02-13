@@ -1,0 +1,2104 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Avant1的笔记本">
+      
+      
+        <meta name="author" content="Avantihub">
+      
+      
+        <link rel="canonical" href="https://avantihub.github.io/cs/ML/Hungyi22/hw2/">
+      
+      
+        <link rel="prev" href="../hw1/">
+      
+      
+        <link rel="next" href="../HW3/dataaug/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../../assets/images/github0.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Phoneme Classification - Avant1's Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M6 13h8l-3.5 3.5 1.42 1.42L17.84 12l-5.92-5.92L10.5 7.5 14 11H6z"/></svg>');}</style>
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/timeline.css">
+    
+      <link rel="stylesheet" href="../../../../css/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ml2023spring-hw2" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="Avant1&#39;s Notes" class="md-header__button md-logo" aria-label="Avant1's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Avant1's Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Phoneme Classification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256l137.3-137.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Avantihub/avantihub.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Avantihub/note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+    
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../assembly/asm1/" class="md-tabs__link">
+          
+  
+    
+  
+  Assembly
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../codingprob/P1010/" class="md-tabs__link">
+          
+  
+    
+  
+  CodingProb
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Life/optimistic/" class="md-tabs__link">
+          
+  
+    
+  
+  Life
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Avant1&#39;s Notes" class="md-nav__button md-logo" aria-label="Avant1's Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    Avant1's Notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Avantihub/avantihub.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Avantihub/note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Computer Science
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Computer Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ML
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            ML
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    李宏毅22/23
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            李宏毅22/23
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hw1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Regression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Phoneme Classification
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HW3/dataaug/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Classification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Train
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Train
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Train/Transfer_Curri/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Transfer&Curriculum learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    编程语言
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            编程语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C/C++
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            C/C++
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pl/c_cpp/C/c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C语言
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pl/c_cpp/C/C09A/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C09A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pl/c_cpp/C/simu29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    simu29
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pl/c_cpp/CPP/cpp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pl/c_cpp/Pointer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pointer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../pl/python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pl/python/cs61a.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CS61A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Assembly
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Assembly
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../assembly/asm1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asm1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../assembly/asm2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    asm2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../assembly/stk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    stk&Regi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CodingProb
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            CodingProb
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../codingprob/P1010/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    P1010幂次方
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../codingprob/P1011/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    P1011车站
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../codingprob/P1098/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    P1098字符串展开
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../codingprob/hello0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hello
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Life
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Life
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Life/optimistic/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Optimistic
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../Life/24lec0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Folding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/Avantihub/avantihub.github.io/edit/master/docs/cs/ML/Hungyi22/hw2.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="ml2023spring-hw2">ML2023Spring - HW2<a class="headerlink" href="#ml2023spring-hw2" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4460 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 177 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 17 分钟</p>
+</div>
+<blockquote>
+<p><a href="https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php">课程主页</a></p>
+<p><a href="https://www.bilibili.com/video/BV1TD4y137mP/?spm_id_from=333.337.search-card.all.click&amp;vd_source=436107f586d66ab4fcf756c76eb96c35">课程视频</a></p>
+<p><a href="https://www.kaggle.com/t/03ac116596a247219b5a8d7a8e2b800e">Kaggle link</a></p>
+</blockquote>
+<div class="admonition info">
+<p class="admonition-title">2023Spring</p>
+<p>本文档是对 ML2023Spring - HW02 的解析，主要包括任务目标、性能指标、数据解析、Sample code 主体部分解析、Baselines 等内容。</p>
+</div>
+<h1 id="_1">任务目标<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Phoneme Classification 音素分类（识别）
+  <a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230313162349.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="源自 HW02 PDF" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230313162349.png" /></a></li>
+<li>训练/测试数据大小：3429/857（2116794/527364 frames）每个 frames 25ms，相邻 frames 间隔 10ms，1s 可以划分出 100 个frames，单个 frames 最后被处理为 39 维的 MFCC (<strong>Mel Frequency Cepstral Coefficients</strong>)
+  <a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230313163334.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="源自 HW02 PDF" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230313163334.png" /></a></li>
+<li>Label：41，对应 phoneme</li>
+</ul>
+<h1 id="_2">目录<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#任务目标分类">任务目标（分类）</a></li>
+<li><a href="#metric">Metric</a></li>
+<li><a href="#数据解析">数据解析</a></li>
+<li><a href="#数据下载">数据下载</a></li>
+<li><a href="#report">Report</a></li>
+<li><a href="#1">1</a><ul>
+<li><a href="#计算神经网络的参数量">计算神经网络的参数量</a></li>
+<li><a href="#构建总参数量接近的神经网络">构建总参数量接近的神经网络</a></li>
+</ul>
+</li>
+<li><a href="#2">2</a></li>
+<li><a href="#sample-code-部分解析">Sample code 部分解析</a></li>
+<li><a href="#model">Model</a></li>
+<li><a href="#hyper-parameters">Hyper-parameters</a></li>
+<li><a href="#baselines">Baselines</a></li>
+<li><a href="#simple-baseline-049798">Simple Baseline (0.49798)</a></li>
+<li><a href="#medium-baseline-066440">Medium Baseline (0.66440)</a></li>
+<li><a href="#strong-baseline-074944">Strong Baseline (0.74944)</a>
+        * <a href="#开始实验">开始实验</a>
+           * <a href="#reducelronplateau"><strong>ReduceLROnPlateau()</strong></a>
+              * <a href="#学习率变化曲线">学习率变化曲线</a>
+              * <a href="#实验数据">实验数据</a>
+              * <a href="#kaggle-分数-074427"><strong>Kaggle 分数: 0.74427</strong></a>
+           * <a href="#cosineannealinglr"><strong>CosineAnnealingLR()</strong></a>
+              * <a href="#学习率变化曲线-1">学习率变化曲线</a>
+              * <a href="#实验数据-1">实验数据</a>
+              * <a href="#kaggle-分数-074391没有提升"><strong>Kaggle 分数: 0.74391（没有提升）</strong></a>
+           * <a href="#cosineannealingwarmrestarts"><strong>CosineAnnealingWarmRestarts()</strong></a>
+              * <a href="#学习率变化曲线-2">学习率变化曲线</a>
+              * <a href="#实验结果">实验结果</a>
+              * <a href="#kaggle-分数-074328没有提升"><strong>Kaggle 分数: 0.74328（没有提升）</strong></a>
+              * <a href="#t_0--2">T_0 *= 2</a>
+             * <a href="#学习率变化曲线-3">学习率变化曲线</a>
+             * <a href="#实验结果-1">实验结果</a>
+             * <a href="#kaggle-分数-074403没有提升"><strong>Kaggle 分数: 0.74403（没有提升）</strong></a>
+           * <a href="#no-scheduler"><strong>no scheduler</strong></a>
+              * <a href="#学习率变化曲线-4">学习率变化曲线</a>
+              * <a href="#实验结果-2">实验结果</a>
+              * <a href="#kaggle-分数-074408"><strong>Kaggle 分数: 0.74408</strong></a>
+           * <a href="#实验结果对比"><strong>实验结果对比</strong></a>
+        * <a href="#修改-lr25e-4重新实验">修改 lr=2.5e-4，重新实验</a>
+           * <a href="#实验结果对比-1"><strong>实验结果对比</strong></a>
+        * <a href="#总结">总结</a></li>
+<li><a href="#boss-baseline-083017">Boss Baseline (0.83017)</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+</ul>
+<h1 id="metric">Metric<a class="headerlink" href="#metric" title="Permanent link">&para;</a></h1>
+<p>分类精度</p>
+<h1 id="_3">数据解析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h1>
+<ul>
+<li>train_split.txt: 其中每一行对应一个训练数据，其所对应的文件在feat/train/中
+  <a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230314115316.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230314115316.png" alt="image-20230314115316158" style="zoom:50%;" /></a></li>
+<li>train_labels.txt: 由训练数据和labels组成，格式为: filename labels。其中，label 为 frame 对应的 phoneme
+  <a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230314115336.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230314115336.png" alt="image-20230314115336131" style="zoom:50%;" /></a></li>
+<li>test_split.txt: 其中每一行对应一个训练数据，其所对应的文件在feat/test/中</li>
+<li>feat/train/{id}.pt 和 feat/test/{id}.pt: 音频对应的 MFCC w/ CMVN，维度为39，这些文件可以通过torch.load()直接导入，导入后的shape为(T, 39)。
+  <a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230314115729.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230314115729.png" alt="image-20230314115729703" style="zoom:50%;" /></a></li>
+</ul>
+<p>数据来源于 <a href="https://www.openslr.org/12/">LibriSpeech ASR corpus (subset of train-clean-100)</a>: 100小时 "clean" 的演讲训练数据集子集（<a href="http://www.danielpovey.com/files/2015_icassp_librispeech.pdf">数据源对应的论文</a>）</p>
+<p>Reference: <a href="https://github.com/Hoper-J/HUNG-YI_LEE_Machine-Learning_Homework/tree/master">Hoper-J's Note</a></p>
+<h1 id="report">Report<a class="headerlink" href="#report" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>注意到 HW02 有写报告的要求：</p>
+<ol>
+<li>实现两个参数量大致相同的模型，(A) 一个深窄的（例如，隐藏层数=6，隐藏维度=1024），(B) 一个浅宽的（例如，隐藏层数=2，隐藏维度=1750）。报告两个模型的训练/验证准确率。</li>
+<li>添加dropout层，并分别报告dropout率为(A) 0.25/(B) 0.5/(C) 0.75时的训练/验证准确率。</li>
+</ol>
+</blockquote>
+<h2 id="1">1<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>这个视频片段能够让你更好的了解 Deep Network 和 Shallow network 的差异：<a href="https://www.bilibili.com/video/BV1Wv411h7kN/?p=33&amp;share_source=copy_web&amp;vd_source=e46571d631061853c8f9eead71bdb390&amp;t=1560">Why Deep Learning?</a></p>
+<h3 id="_4">计算神经网络的参数量<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>先看看如何计算参数。</p>
+<p>对于全连接层来说，其单层的参数量为 <code>(输入维度 + 1) * 该层神经元个数</code>。这是因为全连接层的每个神经元都需要一个 <code>权重向量</code> 和一个 <code>偏置值</code> 来计算其输出，<code>权重向量</code> 的长度就是 <code>输入维度</code>，<code>偏置值</code> 是一个标量。</p>
+<p>若当前 <code>network</code> 有 <code>hidden_layers</code> 层 <code>hidden layer</code>，其中每层 <code>hidden_layer</code> 有 <code>hidden_dim</code> 维，则有：</p>
+<p><span class="arithmatex">\(Total\_params = (input\_dim + 1) * hidden\_dim + (hidden\_dim + 1)  * hidden\_dim * (hidden\_layers - 1) + (hidden\_dim + 1) * output\_dim\)</span></p>
+<p>对于一个神经网络来说，其总参数量就是所有全连接层的参数量之和。例如，如果我们有一个神经网络，它有一个输入层（输入维度为 4），一个隐藏层（隐藏层神经元个数为 5），和一个输出层（输出维度为 3），那么它的总参数量就是：</p>
+<p>输入层到隐藏层的全连接层：<span class="arithmatex">\((4 + 1) * 5 = 25\)</span>
+隐藏层到输出层的全连接层：<span class="arithmatex">\((5 + 1) * 3 = 18\)</span>
+总参数量：<span class="arithmatex">\(25 + 18 = 43\)</span></p>
+<p>如下图所示：</p>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230316155657.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="图源自《动手学深度学习》" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230316155657.png" /></a></p>
+<p>这里再举个例子说明：</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">input_dim</span> <span class="o">=</span> <span class="mi">8</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">hidden_dim</span> <span class="o">=</span> <span class="mi">16</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">hidden_layers</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">output_dim</span> <span class="o">=</span> <span class="mi">8</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 为了简洁，舍去了 Relu()</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">network</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="c1"># 在函数的调用中，一个 * 表示将一个序列展开为单独的位置参数，这一行代码是列表推导，最终的表现是重复生成多个 hidden layer</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>            <span class="o">*</span><span class="p">[</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hidden_layers</span><span class="o">-</span><span class="mi">1</span><span class="p">)],</span> 
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        <span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># 打印总参数量</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">total_params</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="p">(</span><span class="n">input_dim</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">hidden_dim</span> <span class="o">+</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="p">(</span><span class="n">hidden_dim</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">hidden_dim</span> <span class="o">*</span> <span class="p">(</span><span class="n">hidden_layers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="p">(</span><span class="n">hidden_dim</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">output_dim</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="p">)</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total params: </span><span class="si">{</span><span class="n">total_params</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;</span> <span class="n">Total</span> <span class="n">params</span><span class="p">:</span> <span class="mi">552</span>
+</span></code></pre></div></p>
+<p>当然，实际上你可以直接使用 pytorch 中的函数进行打印
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">total_params</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total params: </span><span class="si">{</span><span class="n">total_params</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></code></pre></div></p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;</span> <span class="n">Total</span> <span class="n">params</span><span class="p">:</span> <span class="mi">552</span>
+</span></code></pre></div>
+进一步的，如果你想查看各层分别的参数量，你可以使用以下代码
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">numel</span><span class="p">())</span>
+</span></code></pre></div>
+   <code>python
+0.weight 128
+0.bias 16
+1.weight 256
+1.bias 16
+2.weight 128
+2.bias 8</code>
+其中 <code>weight</code> 对应的是权重，<code>bias</code>是偏差。</p>
+<p>若<code>concat_nframes = 3</code>, <code>input_dim = 39 * concat_nframe = 117</code>,  <code>hidden_layers = 6</code>,  <code>hidden_dim = 64</code>, <code>output_dim = 41</code>，则总参数量为31017。</p>
+<p><code>hidden_layers = 2</code> 的情况下，最接近的总参数量为：30890，对应的<code>hidden_dim</code>为113。</p>
+<p>但你需要注意的是，<code>concat_nframes</code> 是一个 <code>hyper-parameter</code>，需要根据实际情况调整，所以你也需要相应的对整个网络架构进行改变。</p>
+<h3 id="_5">构建总参数量接近的神经网络<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>已知神经网络的总参数量由下式给出：
+<span class="arithmatex">\(<span class="arithmatex">\(Total\_params = (input\_dim + 1) * hidden\_dim + (hidden\_dim + 1)  * hidden\_dim * (hidden\_layers - 1) + (hidden\_dim + 1) * output\_dim\)</span>\)</span></p>
+<p>为了符号简便，做以下简写：
+- <span class="arithmatex">\(i = input\_dim\)</span>
+- <span class="arithmatex">\(o = output\_dim\)</span>
+- <span class="arithmatex">\(l = hidden\_layers\)</span>
+- <span class="arithmatex">\(d = hidden\_dim\)</span></p>
+<p>有：
+$$
+Total_params = (i + 1) * d + (d + 1) * d * (l - 1) + (d + 1) * o
+$$
+进一步的，将其化成一元二次方程的形式，其中 <span class="arithmatex">\(d\)</span> 为自变量：
+$$
+Total_params = (l - 1) * d^2 + (i + o + l) * d + o
+$$</p>
+<p>假设 <span class="arithmatex">\(i, o, l, d\)</span> 均为已知量，现在需要求：在输入输出维度不变的情况下，当 <span class="arithmatex">\(dest\_hidden\_layers\)</span> 给定时，隐藏层的维数等于多少才能让两个网络的总参数量接近？（<span class="arithmatex">\(dest\)</span> 代指我们要计算的目标网络）</p>
+<p>同样的，做以下简写：
+- <span class="arithmatex">\(l_d = dest\_hidden\_layers\)</span>
+- <span class="arithmatex">\(d_d = dest\_hidden\_dim\)</span></p>
+<p>则有：
+$$
+dest_Total_params = (l_d - 1) * d_d^2 + (i + o + l_d) * d_d + o
+$$</p>
+<p>令 <span class="arithmatex">\(dest\_Total\_params = Total\_params\)</span>：
+$$
+(l_d - 1) * d_d^2 + (i + o + l_d) * d_d + o = (l - 1) * d^2 + (i + o + l) * d + o\\Downarrow\
+(l_d - 1) * d_d^2 + (i + o + l_d) * d_d - (l - 1) * d^2 - (i + o + l) * d  = 0
+$$</p>
+<p>这实际上是一个一元二次方程，其中 <span class="arithmatex">\(d_d\)</span> 为自变量，其余均已知，可当作常数看待。令
+$$
+a = l_d - 1，\
+b = i + o + l_d，\
+c = - (l - 1) * d^2 - (i + o + l) * d
+$$
+则上式可化成 
+$$
+a * d_d^2 + b *d_d + c = 0
+$$
+由一元二次方程的求根公式
+$$
+y = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+有
+$$
+d_d = \frac{-(i+o+l_d) \pm \sqrt{(i+o+l_d)^2 - 4(l_d-l)(-((l - 1) * d^2 - (i + o + l) * d))}}{2(l_d-l)}
+$$</p>
+<p>你可以通过调用下方代码中的 <code>get_dest_dim()</code>  获取目标网络隐藏层应该设置的维度。
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">get_dest_dim</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">,</span> <span class="n">hidden_layers</span><span class="p">,</span> <span class="n">dest_hidden_layers</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;获取目标网络隐藏层的维度（总参数量接近于原网络）&#39;&#39;&#39;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="c1"># 计算一元二次方程的系数 a,b,c</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">a</span> <span class="o">=</span> <span class="n">dest_hidden_layers</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># a = l_d - 1</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">b</span> <span class="o">=</span> <span class="n">input_dim</span> <span class="o">+</span> <span class="n">output_dim</span> <span class="o">+</span> <span class="n">dest_hidden_layers</span>  <span class="c1">#  b = i + o + l_d</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">c</span> <span class="o">=</span> <span class="o">-</span> <span class="p">(</span><span class="n">hidden_layers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">hidden_dim</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">input_dim</span> <span class="o">+</span> <span class="n">output_dim</span> <span class="o">+</span> <span class="n">hidden_layers</span><span class="p">)</span> <span class="o">*</span> <span class="n">hidden_dim</span>  <span class="c1"># c = - (l - 1) * (d ** 2) - (i + o + l) * d</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="c1"># 计算分子中的平方根部分，即 b^2-4ac</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">sqrt_part</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="c1"># 计算两个解，一个是加号，一个是减号，即(-b±√(b^2-4ac))/(2a)</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="n">d_d_plus</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">sqrt_part</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">d_d_minus</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">sqrt_part</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="c1"># 返回两个解的元组</span>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">d_d_plus</span><span class="p">,</span> <span class="n">d_d_minus</span><span class="p">)</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1"># 设置你想要的目标网络隐藏层数量</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a><span class="n">dest_hidden_layers</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="c1"># 获取对应的维数</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="n">dest_hidden_dim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_dest_dim</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">,</span> <span class="n">hidden_layers</span><span class="p">,</span> <span class="n">dest_hidden_layers</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">)</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;若将隐藏层网络层数改为: </span><span class="si">{</span><span class="n">dest_hidden_layers</span><span class="si">}</span><span class="s2">，则维数应当改为: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">dest_hidden_dim</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,)</span>
+</span></code></pre></div></p>
+<h2 id="2">2<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p><code>nn.Dropout(p=)</code> 在激活函数前/后增加都可以。</p>
+<h1 id="sample-code">Sample code 部分解析<a class="headerlink" href="#sample-code" title="Permanent link">&para;</a></h1>
+<h2 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h2>
+<p>这里你可以随意的修改 <code>model</code> 的架构以达到 <code>strong baseline</code>。（原代码中有bug，我进行了修正）</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">class</span> <span class="nc">BasicBlock</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">):</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">BasicBlock</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="c1"># TODO: apply batch normalization and dropout for strong baseline.</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>        <span class="c1"># Reference: https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm1d.html (batch normalization)</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>        <span class="c1">#       https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html (dropout)</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">block</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">),</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>            <span class="c1"># nn.BatchNorm1d()</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>            <span class="c1"># nn.Dropout()</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>        <span class="p">)</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>        <span class="k">return</span> <span class="n">x</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="k">class</span> <span class="nc">Classifier</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="mi">41</span><span class="p">,</span> <span class="n">hidden_layers</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Classifier</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>
+</span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a>            <span class="n">BasicBlock</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">),</span>
+</span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a>            <span class="c1"># 在函数的调用中，一个 * 表示将一个序列展开为单独的位置参数，这一行代码是列表推导，最终的表现是重复生成多个 hidden layer</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a>            <span class="c1">#（原来的整段代码实际上生成了 hidden_layers+1 个隐藏层，所以我修改了一下代码，让其符合定义）</span>
+</span><span id="__span-6-30"><a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>            <span class="o">*</span><span class="p">[</span><span class="n">BasicBlock</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hidden_layers</span><span class="o">-</span><span class="mi">1</span><span class="p">)],</span> 
+</span><span id="__span-6-31"><a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">)</span>
+</span><span id="__span-6-32"><a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a>        <span class="p">)</span>
+</span><span id="__span-6-33"><a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a>
+</span><span id="__span-6-34"><a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span><span id="__span-6-35"><a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-6-36"><a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a>        <span class="k">return</span> <span class="n">x</span>
+</span></code></pre></div>
+<h2 id="hyper-parameters">Hyper-parameters<a class="headerlink" href="#hyper-parameters" title="Permanent link">&para;</a></h2>
+<p>在这个模块中修改超参数，完成 <code>medium baseline</code>。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># data prarameters</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># TODO: change the value of &quot;concat_nframes&quot; for medium baseline</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">concat_nframes</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1"># 拼接的总数量，应当为奇数，左右各拼接 concat_nframes/2 个 frames（非常重要的参数）</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">train_ratio</span> <span class="o">=</span> <span class="mf">0.75</span>   <span class="c1"># 训练集的比例，</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># training parameters</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">seed</span> <span class="o">=</span> <span class="mi">1213</span>          <span class="c1"># random seed</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">512</span>        <span class="c1"># batch size</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="n">num_epoch</span> <span class="o">=</span> <span class="mi">10</span>         <span class="c1"># the number of training epoch</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">1e-4</span>      <span class="c1"># learning rate</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;./model.ckpt&#39;</span>  <span class="c1"># the path where the checkpoint will be saved</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1"># model parameters</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="c1"># TODO: change the value of &quot;hidden_layers&quot; or &quot;hidden_dim&quot; for medium baseline</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="n">input_dim</span> <span class="o">=</span> <span class="mi">39</span> <span class="o">*</span> <span class="n">concat_nframes</span>  <span class="c1"># the input dim of the model, you should not change the value</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="n">hidden_layers</span> <span class="o">=</span> <span class="mi">2</span>          <span class="c1"># the number of hidden layers</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="n">hidden_dim</span> <span class="o">=</span> <span class="mi">64</span>           <span class="c1"># the hidden dim</span>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+</span><span id="__span-7-19"><a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="sd">&#39;&#39;&#39; 以下是为了完成 report 所添加的代码 &#39;&#39;&#39;</span>
+</span><span id="__span-7-20"><a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>
+</span><span id="__span-7-21"><a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="c1"># 提前输出模型参数数量，以便调整网络架构</span>
+</span><span id="__span-7-22"><a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="n">total_params</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-7-23"><a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>    <span class="p">(</span><span class="n">input_dim</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">hidden_dim</span> <span class="o">+</span>
+</span><span id="__span-7-24"><a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>    <span class="p">(</span><span class="n">hidden_dim</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">hidden_dim</span> <span class="o">*</span> <span class="p">(</span><span class="n">hidden_layers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span>
+</span><span id="__span-7-25"><a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>    <span class="p">(</span><span class="n">hidden_dim</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">41</span>
+</span><span id="__span-7-26"><a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="p">)</span>
+</span><span id="__span-7-27"><a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total params: </span><span class="si">{</span><span class="n">total_params</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-7-28"><a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>
+</span><span id="__span-7-29"><a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="k">def</span> <span class="nf">get_dest_dim</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">,</span> <span class="n">hidden_layers</span><span class="p">,</span> <span class="n">dest_hidden_layers</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">):</span>
+</span><span id="__span-7-30"><a id="__codelineno-7-30" name="__codelineno-7-30" href="#__codelineno-7-30"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;获取目标网络隐藏层的维度（总参数量接近于原网络）&#39;&#39;&#39;</span>
+</span><span id="__span-7-31"><a id="__codelineno-7-31" name="__codelineno-7-31" href="#__codelineno-7-31"></a>    <span class="c1"># 计算一元二次方程的系数 a,b,c</span>
+</span><span id="__span-7-32"><a id="__codelineno-7-32" name="__codelineno-7-32" href="#__codelineno-7-32"></a>    <span class="n">a</span> <span class="o">=</span> <span class="n">dest_hidden_layers</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># a = l_d - 1</span>
+</span><span id="__span-7-33"><a id="__codelineno-7-33" name="__codelineno-7-33" href="#__codelineno-7-33"></a>    <span class="n">b</span> <span class="o">=</span> <span class="n">input_dim</span> <span class="o">+</span> <span class="n">output_dim</span> <span class="o">+</span> <span class="n">dest_hidden_layers</span>  <span class="c1">#  b = i + o + l_d</span>
+</span><span id="__span-7-34"><a id="__codelineno-7-34" name="__codelineno-7-34" href="#__codelineno-7-34"></a>    <span class="n">c</span> <span class="o">=</span> <span class="o">-</span> <span class="p">(</span><span class="n">hidden_layers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">hidden_dim</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">input_dim</span> <span class="o">+</span> <span class="n">output_dim</span> <span class="o">+</span> <span class="n">hidden_layers</span><span class="p">)</span> <span class="o">*</span> <span class="n">hidden_dim</span>  <span class="c1"># c = - (l - 1) * (d ** 2) - (i + o + l) * d</span>
+</span><span id="__span-7-35"><a id="__codelineno-7-35" name="__codelineno-7-35" href="#__codelineno-7-35"></a>
+</span><span id="__span-7-36"><a id="__codelineno-7-36" name="__codelineno-7-36" href="#__codelineno-7-36"></a>    <span class="c1"># 计算分子中的平方根部分，即 b^2-4ac</span>
+</span><span id="__span-7-37"><a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a>    <span class="n">sqrt_part</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+</span><span id="__span-7-38"><a id="__codelineno-7-38" name="__codelineno-7-38" href="#__codelineno-7-38"></a>
+</span><span id="__span-7-39"><a id="__codelineno-7-39" name="__codelineno-7-39" href="#__codelineno-7-39"></a>    <span class="c1"># 计算两个解，一个是加号，一个是减号，即(-b±√(b^2-4ac))/(2a)</span>
+</span><span id="__span-7-40"><a id="__codelineno-7-40" name="__codelineno-7-40" href="#__codelineno-7-40"></a>    <span class="n">d_d_plus</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">sqrt_part</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+</span><span id="__span-7-41"><a id="__codelineno-7-41" name="__codelineno-7-41" href="#__codelineno-7-41"></a>    <span class="n">d_d_minus</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">sqrt_part</span><span class="o">**</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+</span><span id="__span-7-42"><a id="__codelineno-7-42" name="__codelineno-7-42" href="#__codelineno-7-42"></a>
+</span><span id="__span-7-43"><a id="__codelineno-7-43" name="__codelineno-7-43" href="#__codelineno-7-43"></a>    <span class="c1"># 返回两个解的元组</span>
+</span><span id="__span-7-44"><a id="__codelineno-7-44" name="__codelineno-7-44" href="#__codelineno-7-44"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">d_d_plus</span><span class="p">,</span> <span class="n">d_d_minus</span><span class="p">)</span>
+</span><span id="__span-7-45"><a id="__codelineno-7-45" name="__codelineno-7-45" href="#__codelineno-7-45"></a>
+</span><span id="__span-7-46"><a id="__codelineno-7-46" name="__codelineno-7-46" href="#__codelineno-7-46"></a><span class="c1"># 设置你想要的目标网络隐藏层数量</span>
+</span><span id="__span-7-47"><a id="__codelineno-7-47" name="__codelineno-7-47" href="#__codelineno-7-47"></a><span class="n">dest_hidden_layers</span> <span class="o">=</span> <span class="mi">9</span>
+</span><span id="__span-7-48"><a id="__codelineno-7-48" name="__codelineno-7-48" href="#__codelineno-7-48"></a>
+</span><span id="__span-7-49"><a id="__codelineno-7-49" name="__codelineno-7-49" href="#__codelineno-7-49"></a><span class="c1"># 获取对应的维数</span>
+</span><span id="__span-7-50"><a id="__codelineno-7-50" name="__codelineno-7-50" href="#__codelineno-7-50"></a><span class="n">dest_hidden_dim</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_dest_dim</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="n">hidden_layers</span><span class="p">,</span> <span class="n">dest_hidden_layers</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">)</span>
+</span><span id="__span-7-51"><a id="__codelineno-7-51" name="__codelineno-7-51" href="#__codelineno-7-51"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;若将隐藏层网络层数改为: </span><span class="si">{</span><span class="n">dest_hidden_layers</span><span class="si">}</span><span class="s2">，则维数应当改为: </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">dest_hidden_dim</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,)</span>
+</span></code></pre></div>
+<h1 id="baselines">Baselines<a class="headerlink" href="#baselines" title="Permanent link">&para;</a></h1>
+<p>根据作业 PDF 中的提示：</p>
+<h2 id="simple-baseline-049798">Simple Baseline (0.49798)<a class="headerlink" href="#simple-baseline-049798" title="Permanent link">&para;</a></h2>
+<ul>
+<li>运行所给的 sample code。</li>
+</ul>
+<h2 id="medium-baseline-066440">Medium Baseline (0.66440)<a class="headerlink" href="#medium-baseline-066440" title="Permanent link">&para;</a></h2>
+<ul>
+<li>连接 n 个frames。
+具体选择多少个 frames 呢？<a href="https://speech.ee.ntu.edu.tw/~hylee/ml/ml2023-course-data/HW02+聽測.pdf">HW02 PDF</a> 中给出的样例是 11 个，查询<a href="https://www.phon.ucl.ac.uk/courses/spsci/spc/lab8.html">相关专业知识</a>后有下表：
+<a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230318201347.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="the phone names are in SAMPA format" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230318201347.png" /></a>
+<a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230318200428.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="Table of Phoneme Durations in milliseconds" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230318200428.png" /></a>
+注意到英文中 phoneme 的持续时间都小于 11 个frames（11*25=275ms)。你可以根据专业知识自行选择，比如说你想再联系前后两个 phoneme 的信息来做预测，那设置成 15 也可以，这些由你自己去确定，从实验中获得更好的选择。</li>
+<li>增加网络的隐藏层。
+下图是我一开始记录的一些实验结果，仅简单的增加了层数和神经元个数便达到了 Medium Baseline（最终记录的是 Kaggle 上的分数），你可以根据自己的情况更进一步的优化它。
+<a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230318212951.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="image-20230318212951814" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230318212951.png" /></a></li>
+</ul>
+<h2 id="strong-baseline-074944">Strong Baseline (0.74944)<a class="headerlink" href="#strong-baseline-074944" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>在 BasicBlock() 中增加 batchnorm 和 dropout 层。</p>
+</li>
+<li>
+<p>增大 concat_nframes。</p>
+</li>
+</ul>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_42426841/article/details/129716343">scheduler 的使用实验对比和总结（PyTorch）</a></p>
+<blockquote>
+<p>这是关于各 scheduler（<strong>ReduceLROnPlateau()</strong>，<strong>CosineAnnealingLR()</strong>，<strong>CosineAnnealingWarmRestarts()</strong>）使用的对比实验。</p>
+<p>起因是为了在 Kaggle 上跑出更高的成绩，但结果确出乎我的意料，为了工作不白费，我决定将它们的结果重新可视化分享给你们。我一开始没有过多的修改初始配置，这篇文章的目的仅仅是为了给你展现不同 scheduler 下的学习率变化以及对实验结果的影响（片面的）。</p>
+<p>时间原因我仅在这个<a href="https://www.kaggle.com/competitions/ml2023spring-hw2/data">数据集</a>上跑了对比实验。</p>
+<p>原本是想贴个链接的，想了想还是放在这方便查看。</p>
+</blockquote>
+<h1 id="_6">开始实验<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>为了对比，每个 scheduler 都跑了 300 个epoch，可能不多，但也能看出些端倪。</p>
+<p>这里贴一下我的其他参数，如果不需要做这个 HW，可以跳过这段往下看，并不影响。</p>
+<p>跑 300 个 epoch 是因为在这个参数的设置（请勿模仿）下，大概到 300 就没有什么波动了。</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="sd">&quot;&quot;&quot;dropout(p=0.25)&quot;&quot;&quot;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="n">concat_nframes</span> <span class="o">=</span> <span class="mi">15</span>   <span class="c1"># the number of frames to concat with, n must be odd (total 2k+1 = n frames)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="n">train_ratio</span> <span class="o">=</span> <span class="mf">0.95</span>   <span class="c1"># the ratio of data used for training, the rest will be used for validation</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># training parameters</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="n">seed</span> <span class="o">=</span> <span class="mi">1213</span>          <span class="c1"># random seed</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">batch_size</span> <span class="o">=</span> <span class="mi">512</span>        <span class="c1"># batch size</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="n">num_epoch</span> <span class="o">=</span> <span class="mi">300</span>         <span class="c1"># the number of training epoch</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="n">learning_rate</span> <span class="o">=</span>  <span class="mf">5e-4</span>     <span class="c1"># learning rate</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="n">hidden_layers</span> <span class="o">=</span> <span class="mi">6</span>          <span class="c1"># the number of hidden layers</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="n">hidden_dim</span> <span class="o">=</span> <span class="mi">512</span>         <span class="c1"># the hidden dim</span>
+</span></code></pre></div>
+</blockquote>
+<p>最初，我增加了一个自动调整 <code>learning_rate</code> 的 <code>scheduler</code>，选择的是 <code>torch.optim.lr_scheduler</code> 中的 <code>ReduceLROnPlateau()</code>。</p>
+<h2 id="reducelronplateau"><strong>ReduceLROnPlateau()</strong><a class="headerlink" href="#reducelronplateau" title="Permanent link">&para;</a></h2>
+<p>先介绍一下参数方便理解：</p>
+<blockquote>
+<p><code>torch.optim.lr_scheduler.ReduceLROnPlateau</code>(<em>optimizer</em>, <em>mode='min'</em>, <em>factor=0.1</em>, <em>patience=10</em>, <em>threshold=0.0001</em>, <em>threshold_mode='rel'</em>, <em>cooldown=0</em>, <em>min_lr=0</em>, <em>eps=1e-08</em>, <em>verbose=False</em>)</p>
+<ul>
+<li><code>optimizer (Optimizer)</code> ：指定需要对哪个优化器对象进行学习率调整。</li>
+<li><code>mode (str)</code>：指标的模式。可以是“min”或“max”。如果是“min”，那么当指标停止降低时将调整学习率；如果是“max”，那么当指标停止升高时将调整学习率。</li>
+<li><code>factor (float)</code>：学习率缩小的因子。新学习率=旧学习率 * factor。注意，factor 不能大于1。</li>
+<li><code>patience (int)</code>：如果指标没有改善，则等待多少个epoch来调整学习率。</li>
+<li><code>threshold (float)</code>：指标的变化量阈值，如果小于此值，则将其视为没有改进。</li>
+<li><code>threshold_mode (str)</code>：判断阈值的模式。可以是“rel”或“abs”。如果是“rel”，动态阈值等于最优值乘以(1+threshold)（在’max’模式下）或最优值乘以(1-threshold)（在’min’模式下）。在’abs’模式下，动态阈值等于最优值加上threshold（在’max’模式下）或最优值减去threshold（在’min’模式下）。</li>
+<li><code>cooldown (int)</code>：表示在减小学习率之后等待几个epoch才能再次减小学习率。</li>
+<li><code>min_lr (float or list)</code>：学习率的下限。</li>
+<li><code>eps (float)</code>：表示应用于学习率的最小衰减量。如果新旧学习率之间的差异小于eps，则更新会被忽略。</li>
+<li><code>verbose (bool)</code>：如果为True，则在调整学习率时打印更新的消息。</li>
+</ul>
+</blockquote>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">5e-4</span><span class="p">)</span>   <span class="c1"># 假设初始学习率为 5e-4</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">scheduler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">ReduceLROnPlateau</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>  <span class="c1"># 如果 10 个 epoch 后都没有提升，lr *= factor</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epoch</span><span class="p">):</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">train</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>              <span class="c1"># 训练模型</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">validate</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>           <span class="c1"># 验证模型</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">metric</span><span class="p">)</span>  <span class="c1"># 根据 metric 更新学习率</span>
+</span></code></pre></div>
+<h3 id="_7">学习率变化曲线<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160525.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160525.png" alt="learning rate" style="zoom:50%;" /></a></p>
+<h3 id="_8">实验数据<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160417.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="ReduceLROnPlateau" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160417.png" /></a></p>
+<h3 id="kaggle-074427"><strong>Kaggle 分数: 0.74427</strong><a class="headerlink" href="#kaggle-074427" title="Permanent link">&para;</a></h3>
+<p>最初选择 <code>ReduceLROnPlateau()</code> 的原因是基于一个设想的较乐观的情况：只要慢慢减少学习率一定会收敛到优秀的解。</p>
+<p>当时发现了好几种scheduler，但看到根据 epoch 变化 <code>learing rate</code> 的 <code>scheduler</code>（比如 <code>StepLR</code>，<code>ExponentialLR</code>），觉得完全不如根据实验结果动态变化的 <code>ReduceLROnPlateau</code> 便没有进行选择。</p>
+<p>看到这里你应该仅仅对 ReduceLROnPlateau() 有了简单的认识，不妨继续往下看，看看实验对比。</p>
+<p>在 <code>acc</code> 卡住后，我试图去寻找其他的 <code>scheduler</code>，看能不能让 <code>learning rate</code> 在中途变大跳出一些区域后再变小，然后发现还有周期性变化的 <code>scheduler</code>（比如 <code>CosineAnnealingLR</code>，<code>CyclicLR</code>），于是，我尝试修改成 <code>CosineAnnealingLR()</code>。</p>
+<h2 id="cosineannealinglr"><strong>CosineAnnealingLR()</strong><a class="headerlink" href="#cosineannealinglr" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><code>torch.optim.lr_scheduler.CosineAnnealingLR</code>(<em>optimizer</em>, <em>T_max</em>, <em>eta_min=0</em>, <em>last_epoch=- 1</em>, <em>verbose=False</em>)</p>
+<ul>
+<li><code>optimizer (Optimizer)</code> ：指定需要对哪个优化器对象进行学习率调整。</li>
+<li><code>T_max (int)</code>: 表示半个周期的长度。例如，如果T_max=10，则学习率在第0个epoch时为最大值，在第0到第10个epoch之间以余弦函数形式逐渐减小，在第10个epoch时达到最小值，在第11到第20个epoch之间以余弦函数形式逐渐增大，在第20个epoch时回到最大值。</li>
+<li><code>eta_min (float)</code>: 表示学习率的最小值，在学习率下降到这个值之后，就不再下降了。默认为0。</li>
+<li><code>last_epoch (int)</code>: 表示上一次更新学习率的epoch索引。默认为-1，表示还没有开始训练。这个参数用于恢复训练时使用，可以将其设置为已经训练的epoch数减 1。</li>
+<li><code>verbose (bool)</code>：如果为True，则在调整学习率时打印更新的消息。</li>
+</ul>
+</blockquote>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">5e-4</span><span class="p">)</span>   <span class="c1"># 假设初始学习率为 5e-4</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">scheduler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">CosineAnnealingLR</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">T_max</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">eta_min</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epoch</span><span class="p">):</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">train</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>              <span class="c1"># 训练模型</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="n">validate</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>           <span class="c1"># 验证模型</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>        <span class="c1"># 更新学习率</span>
+</span></code></pre></div>
+<h3 id="_9">学习率变化曲线<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160614.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160614.png" alt="learning rate" style="zoom:50%;" /></a></p>
+<h3 id="_10">实验数据<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160619.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="CosineAnnealingLR" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160619.png" /></a></p>
+<h3 id="kaggle-074391"><strong>Kaggle 分数: 0.74391（没有提升）</strong><a class="headerlink" href="#kaggle-074391" title="Permanent link">&para;</a></h3>
+<p>这个 scheduler 中的 learning rate 变化曲线与余弦函数一致，但观察发现，CosineAnnealLR 的周期性变化似乎让收敛的过程变得曲折（多次实验效果都类似）。</p>
+<p>观察 acc 和 lr 的变化：每一次 lr 逐步上升都会让 acc 下降。于是我想着有没有一种 scheduler，让 lr 跳过逐步上升的过程，于是找到了 CosineAnnealingWarmRestarts，这个 scheduler 会让 learning rate 在周期的最后瞬间上升 ，这个概念在李宏毅老师过去的视频中也有说到，即：warm restart。</p>
+<h2 id="cosineannealingwarmrestarts"><strong>CosineAnnealingWarmRestarts()</strong><a class="headerlink" href="#cosineannealingwarmrestarts" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><code>torch.optim.lr_scheduler.``CosineAnnealingWarmRestarts</code>(<em>optimizer</em>, <em>T_0</em>, <em>T_mult=1</em>, <em>eta_min=0</em>, <em>last_epoch=- 1</em>, <em>verbose=False</em>)</p>
+<ul>
+<li><code>optimizer (Optimizer)</code> ：指定需要对哪个优化器对象进行学习率调整。</li>
+<li><code>T_0 (int)</code>: 表示第一次restart的epoch，即在T_0个epoch后，学习率将回到最高点，重新开始下降。默认值为10。</li>
+<li><code>T_mult (float)</code>: 表示每次restart之后T_0的值将乘以T_mult。默认值为1。</li>
+<li><code>eta_min (float)</code>: 表示学习率的最小值，在学习率下降到这个值之后，就不再下降了。默认为0。</li>
+<li><code>last_epoch (int)</code>: 表示上一次更新学习率的epoch索引。默认为-1，表示还没有开始训练。这个参数用于恢复训练时使用，可以将其设置为已经训练的epoch数减 1。</li>
+<li><code>verbose (bool)</code>：如果为True，则在调整学习率时打印更新的消息</li>
+</ul>
+</blockquote>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">5e-4</span><span class="p">)</span>   <span class="c1"># 假设初始学习率为 5e-4</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">scheduler</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">lr_scheduler</span><span class="o">.</span><span class="n">CosineAnnealingWarmRestarts</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">T_0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">T_mult</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">eta_min</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epoch</span><span class="p">):</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">train</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>              <span class="c1"># 训练模型</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">validate</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>           <span class="c1"># 验证模型</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="n">scheduler</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>        <span class="c1"># 更新学习率</span>
+</span></code></pre></div>
+<h3 id="_11">学习率变化曲线<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322161024.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322161024.png" alt="learning rate" style="zoom:50%;" /></a></p>
+<h3 id="_12">实验结果<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160948.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="CosineAnnealingWarmRestarts" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322160948.png" /></a></p>
+<h3 id="kaggle-074328"><strong>Kaggle 分数: 0.74328（没有提升）</strong><a class="headerlink" href="#kaggle-074328" title="Permanent link">&para;</a></h3>
+<p>我以为实验结果会变得更好，发现并没有，无论哪种 scheduler，最终的结果都差不多（epoch = 300），这可能是我初始lr设置的太大（5e-4）的原因？</p>
+<p>虽然我产生了修改学习率的想法，但我还想尝试一下另一种修改方式，因为我发现 CosineAnnealLR 参数中 T_max 指代的是半个周期的长度，而 CosineAnnealingWarmRestarts 参数中的 T_0 指代的是一个周期长度，我将二者都设置成了 10，这使得 CosineAnnealingWarmRestarts 在300个epoch中有30个周期，是 CosineAnnealLR 的两倍，我或许应该将 T_0 设置为 2*T_max 来进行最终的对比实验。</p>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322162317.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322162317.png" alt="学习率变化对比" style="zoom:50%;" /></a></p>
+<h3 id="t_0-2">T_0 *= 2<a class="headerlink" href="#t_0-2" title="Permanent link">&para;</a></h3>
+<h4 id="_13">学习率变化曲线<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322162619.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322162619.png" alt="learning rate" style="zoom:50%;" /></a></p>
+<h4 id="_14">实验结果<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322162649.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="T_0*=2" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322162649.png" /></a></p>
+<h4 id="kaggle-074403"><strong>Kaggle 分数: 0.74403（没有提升）</strong><a class="headerlink" href="#kaggle-074403" title="Permanent link">&para;</a></h4>
+<p>看起来，各个 scheduler 最终的表现似乎没有区别？我决定跑一个没有scheduler的版本（是的，我一开始默认的觉得加上scheduler一定会让实验变得更好，但发现似乎并不是这样，最起码在当前的配置下不是（有可能是batchnorm的原因？））。</p>
+<h2 id="no-scheduler"><strong>no scheduler</strong><a class="headerlink" href="#no-scheduler" title="Permanent link">&para;</a></h2>
+<h3 id="_15">学习率变化曲线<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163143.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163143.png" alt="learning rate" style="zoom:50%;" /></a></p>
+<h3 id="_16">实验结果<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163210.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="no scheduler" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163210.png" /></a></p>
+<h3 id="kaggle-074408"><strong>Kaggle 分数: 0.74408</strong><a class="headerlink" href="#kaggle-074408" title="Permanent link">&para;</a></h3>
+<h2 id="_17"><strong>实验结果对比</strong><a class="headerlink" href="#_17" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163835.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="实验结果对比" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163835.png" /></a></p>
+<p>评价是：<strong>花里胡哨，没有区别（HW02 下）。真要用的话， ReduceLROnPlateau() 就够了，有时可以减少训练时间</strong>。</p>
+<p>现在，我决定根据一个现象去改变 lr 的初始值：从输出中，观察到在所有周期中，每次 lr=2.5e-4 和 1.72e-4 的时候上升幅度最大，于是我将 lr 设置成 2.5e-4 重新跑了所有的实验。</p>
+<h1 id="lr25e-4">修改 lr=2.5e-4，重新实验<a class="headerlink" href="#lr25e-4" title="Permanent link">&para;</a></h1>
+<h2 id="_18"><strong>实验结果对比</strong><a class="headerlink" href="#_18" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163803.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="实验结果对比" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163803.png" /></a></p>
+<p>可以看到，<strong>Kaggle 分数</strong>没有提升。</p>
+<p>下图是 lr = 5e-4 和 lr=2.5e-4 的 CosineAnnealingWarmRestarts 对比结果：</p>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163954.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="image-20230322163954786" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322163954.png" /></a></p>
+<p>原以为会有很大的变化，比如在 lr 的最高点处 acc 不会降低这么多，发现并没有，甚至可以说是一模一样，这其中一定有什么我还不了解的东西在发挥作用。</p>
+<h1 id="_19">总结<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h1>
+<p>scheduler 真的没有作用吗？不尽然，这很大程度上取决于你现在的损失函数面和参数配置，使用 scheduler 往往可以更快的收敛。下图是对比：</p>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322201432.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="是否使用 scheduler 的对比" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322201432.png" /></a></p>
+<p>而且，如果你经常性的重新导入模型，那么使用带 last_epoch 参数的 scheduler 会更方便。</p>
+<p>同样的，如果你的模型花费时间很长，也可以通过像 StepLR() 这类的 scheduler 让 lr 在每一轮次变化。</p>
+<p>但相对于盲目的使用一些可能提高 metric 的函数，你更应该在预处理数据上下功夫：</p>
+<ul>
+<li>跑完这个对比实验后，我增加了输入的维度，让数据在一开始拥有更多的信息（对应到 HW02 就是：将 concat_nframes 从 15 增加到了 21，使得在网络可以更多的考虑到相邻的音素），仅仅改变这一条，Kaggle 的分数便超过了 strong baseline，达到了 0.75623。
+  <a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322165030.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="image-20230322165030184" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322165030.png" /></a></li>
+<li>进一步的，dropout 其实不应设置成 25，通过观察可以发现：没有 dropout 的时候，训练集很容易便能达到 90+ 的准确率，当然，这是过拟合了。但 p=25 时，acc 一直上不去又何尝不是欠拟合呢？基于这个想法，我在 p=25/15 下做了对比，下图是大致的实验结果（使用了 ReduceLROnPlateau()）：
+  <a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322170707.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="对比" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230322170707.png" /></a>
+  发现这使得 acc 比之前更快的抵达了 strong baseline，至于刚刚所想的欠拟合，好像没有体现出来 :)</li>
+</ul>
+<p>P.S. epoch 设置成 300 完全是为了跑对比实验，做 HW 的时候不要设这么大，浪费时间。
+实验局限在一个可能不好的参数配置，也局限在单独的 optimizer 之下，仅向大家展示片面的的结果 :)</p>
+<p>好了，以上就是关于一些 scheduler 使用的实验对比和总结，希望对你有所帮助～</p>
+</blockquote>
+<h2 id="boss-baseline-083017">Boss Baseline (0.83017)<a class="headerlink" href="#boss-baseline-083017" title="Permanent link">&para;</a></h2>
+<ul>
+<li>使用 RNN。</li>
+</ul>
+<blockquote>
+<p><a href="https://blog.csdn.net/weixin_42426841/article/details/129742067?csdn_share_tail=%7B%22type%22%3A%22blog%22%2C%22rType%22%3A%22article%22%2C%22rId%22%3A%22129742067%22%2C%22source%22%3A%22weixin_42426841%22%7D">为什么我的模型能跑，但效果很差：错误处理了dataloader返回的数据</a></p>
+<p>PyTorch中 rnn() 有一个参数是batch_first，这个参数如果设置成 True，那么意味着 input 的 shape 从 (seq_len, batch_size, input_size) =&gt; (batch_size, seq_len, input_size)，同样的，此时如果要取最后一个状态，代码从 x[-1] 改成 x[:, -1]。</p>
+<p>dataloader 返回的数据 shape 是 (batch_size, input_dim)，所以，features = features.to(device) 应该修改成 features = features.view(-1, concat_nframes, 39).to(device)，如果你和我一开始一样：因为知道 rnn 的 input.shape=(seq_len, batch_size, input_size)，所以不使用 batch_first=True，但不熟悉 dataloader 返回的 shape格式。那么，你很有可能会使用 features = features.shape(concat_nframes, -1, 39).to(device)，这样可以训练，但效果奇差，而且:) 不会报错。</p>
+<p>你需要格外注意上面这点，必须正确处理 feature 的维度，可以不用设置 batch_first=True，因为这样顶多就是把 self.rnn(x) 改成 self.rnn(x.permute(1, 0, 2))。</p>
+</blockquote>
+<p><a class="glightbox" href="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230325111254.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="最终结果" src="https://blogby.oss-cn-guangzhou.aliyuncs.com/20230325111254.png" /></a></p>
+<h1 id="_20">参考链接<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h1>
+<ol>
+<li><a href="https://stackoverflow.com/questions/49643225/whats-the-difference-between-reshape-and-view-in-pytorch">What's the difference between reshape and view in pytorch?</a></li>
+</ol>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="最后更新">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月8日 10:46:18</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="创建日期">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月8日 10:04:13</span>
+  </span>
+
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2025 <a herf="https://github.com/Avantihub" target="_blank" rel="noopener">Avantihub</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/Avantihub" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["toc.follow", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight", "content.code.annotate", "content.code.copy", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
