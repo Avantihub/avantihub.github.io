@@ -152,6 +152,9 @@ nav:
           - Python:
               - Index: cs/pl/python/index.md
               - CS61A: cs/pl/python/cs61a.md
+      - Verilog:
+          - Wire:
+              - Gate: cs/verilog0.md   
                 
   - Assembly:
       - asm1: assembly/asm1.md

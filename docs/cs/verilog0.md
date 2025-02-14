@@ -41,4 +41,4 @@ continuous assign: 在assign l=r中，r的值改变，l的值也会改变
 
 XNOR: 异或非门，ans=~(a^b),相同为1，不同为0
 
-![logic gates](mkdocs-site\docs\assets\images\cs\andg.png)
+![logic gates](/home/avanti/.local/mkdocs-site/docs/assets/images/cs/andg.png)
