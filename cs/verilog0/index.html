@@ -1252,6 +1252,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endianness-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      endianness 大端小端规则("direction")
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-nets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicit nets隐式线网导致错误
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpacked-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unpacked array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vectorpart-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      取用vector元素：Part-Select
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concatenation" class="md-nav__link">
+    <span class="md-ellipsis">
+      接短成长Concatenation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module" class="md-nav__link">
+    <span class="md-ellipsis">
+      里外module
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1710,6 +1779,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#vector" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vector
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vector">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endianness-direction" class="md-nav__link">
+    <span class="md-ellipsis">
+      endianness 大端小端规则("direction")
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implicit-nets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implicit nets隐式线网导致错误
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpacked-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      Unpacked array
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vectorpart-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      取用vector元素：Part-Select
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concatenation" class="md-nav__link">
+    <span class="md-ellipsis">
+      接短成长Concatenation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#module" class="md-nav__link">
+    <span class="md-ellipsis">
+      里外module
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1737,7 +1875,7 @@
   <h1>Gate</h1>
 
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 272 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 4 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 452 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 57 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 2 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 2 分钟</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
@@ -1773,6 +1911,82 @@ counter = 32'h64 ;32位宽，16进制6*16+4=100</p>
 (与编程语言不同，assign语句描述connection而非action)</p>
 <p>XNOR: 异或非门，ans=~(a^b),相同为1，不同为0</p>
 <p><a class="glightbox" href="/home/avanti/.local/mkdocs-site/docs/assets/images/cs/andg.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="logic gates" src="/home/avanti/.local/mkdocs-site/docs/assets/images/cs/andg.png" /></a></p>
+<p>图中从左到右依次为AND OR NOT门</p>
+<h2 id="vector">Vector<a class="headerlink" href="#vector" title="Permanent link">&para;</a></h2>
+<div class="language-verilog highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">99</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">my_vector</span><span class="p">;</span><span class="w">      </span><span class="c1">// Declare a 100-element vector</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">assign</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">my_vector</span><span class="p">[</span><span class="mh">10</span><span class="p">];</span><span class="w"> </span><span class="c1">// Part-select one bit out of the vector</span>
+</span></code></pre></div>
+<div class="language-verilog highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">module</span><span class="w"> </span><span class="n">example</span><span class="p">;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">0</span><span class="o">:</span><span class="mh">7</span><span class="p">]</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// 定义一个8位宽的wire变量b,位宽定义中的 0 和 7 分别表示最低位（LSB）和最高位（MSB）。</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">8</span><span class="mb">&#39;b11001100</span><span class="p">;</span><span class="w">  </span><span class="c1">// 给b赋值</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="k">initial</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="nb">$display</span><span class="p">(</span><span class="s">&quot;b = %b&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w">  </span><span class="c1">// 输出b的值：11001100</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">        </span><span class="nb">$display</span><span class="p">(</span><span class="s">&quot;b[0] = %b&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">0</span><span class="p">]);</span><span class="w">  </span><span class="c1">// 输出b的第0位：0</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">        </span><span class="nb">$display</span><span class="p">(</span><span class="s">&quot;b[7] = %b&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">7</span><span class="p">]);</span><span class="w">  </span><span class="c1">// 输出b的第7位：1</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">endmodule</span>
+</span></code></pre></div>
+<h3 id="endianness-direction">endianness 大端小端规则("direction")<a class="headerlink" href="#endianness-direction" title="Permanent link">&para;</a></h3>
+<ul>
+<li>LSB在低位，MSB在高位，称为小端（little-endian）e.g., [3:0]</li>
+<li>LSB在高位，MSB在低位，称为大端（big-endian）e.g., [0:3]</li>
+</ul>
+<h3 id="implicit-nets">Implicit nets隐式线网导致错误<a class="headerlink" href="#implicit-nets" title="Permanent link">&para;</a></h3>
+<ul>
+<li>未声明直接使用：通过assign语句或未声明模块端口引用时，Verilog会自动创建1位宽wire类型的隐式线网</li>
+<li>解决：禁用隐式机制，使用`default_nettype none编译指令强制显式声明</li>
+</ul>
+<div class="language-verilog highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Implicit nets</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="no">`default_nettype</span><span class="w"> </span><span class="n">none</span><span class="c1">//强制显式声明</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w">   </span><span class="c1">// Two vectors</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">assign</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">3</span><span class="mb">&#39;b101</span><span class="p">;</span><span class="w">  </span><span class="c1">// a = 101</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">assign</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">       </span><span class="c1">// b =   1  implicitly-created wire</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">assign</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">       </span><span class="c1">// c = 001  &lt;-- bug</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="n">my_module</span><span class="w"> </span><span class="n">i1</span><span class="w"> </span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">e</span><span class="p">);</span><span class="w"> </span><span class="c1">// d and e are implicitly one-bit wide if not declared.</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">                    </span><span class="c1">// This could be a bug if the port was intended to be a vector.</span>
+</span></code></pre></div>
+<h3 id="unpacked-array">Unpacked array<a class="headerlink" href="#unpacked-array" title="Permanent link">&para;</a></h3>
+<div class="language-verilog highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">reg</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">mem</span><span class="w"> </span><span class="p">[</span><span class="mh">255</span><span class="o">:</span><span class="mh">0</span><span class="p">];</span><span class="w">   </span><span class="c1">// 256 unpacked elements, each of which is a 8-bit packed vector of reg.</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">reg</span><span class="w"> </span><span class="n">mem2</span><span class="w"> </span><span class="p">[</span><span class="mh">28</span><span class="o">:</span><span class="mh">0</span><span class="p">];</span><span class="w">         </span><span class="c1">// 29 unpacked elements, each of which is a 1-bit reg.</span>
+</span></code></pre></div>
+<h3 id="vectorpart-select">取用vector元素：Part-Select<a class="headerlink" href="#vectorpart-select" title="Permanent link">&para;</a></h3>
+<p>如果左右vector的位宽不同，会自动进行zero-extension或truncated截断</p>
+<div class="language-verilog highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">w</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">w</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w">      </span><span class="c1">// Only the lower 4 bits of w</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">w</span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">4</span><span class="p">]</span><span class="w">      </span><span class="c1">// Only the upper 4 bits of w</span>
+</span></code></pre></div>
+<h3 id="concatenation">接短成长Concatenation<a class="headerlink" href="#concatenation" title="Permanent link">&para;</a></h3>
+<div class="language-verilog highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="mh">3</span><span class="mb">&#39;b111</span><span class="p">,</span><span class="w"> </span><span class="mh">3</span><span class="mb">&#39;b000</span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mh">6</span><span class="mb">&#39;b111000</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">,</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">,</span><span class="w"> </span><span class="mh">3</span><span class="mb">&#39;b101</span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mh">5</span><span class="mb">&#39;b10101</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">{</span><span class="mh">4&#39;ha</span><span class="p">,</span><span class="w"> </span><span class="mh">4</span><span class="mi">&#39;d10</span><span class="p">}</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="mh">8</span><span class="mb">&#39;b10101010</span><span class="w">     </span><span class="c1">// 4&#39;ha and 4&#39;d10 are both 4&#39;b1010 in binary</span>
+</span></code></pre></div>
+<h2 id="module">里外module<a class="headerlink" href="#module" title="Permanent link">&para;</a></h2>
+<p>You are given the following module:</p>
+<p>module mod_a ( output out1, output out2, input in1, input in2, input in3, input in4);</p>
+<p><a class="glightbox" href="/home/avanti/.local/mkdocs-site/docs/assets/images/cs/modn.png" data-type="image" data-width="80%" data-height="auto" data-desc-position="bottom"><img alt="modules" src="/home/avanti/.local/mkdocs-site/docs/assets/images/cs/modn.png" /></a></p>
+<div class="language-verilog highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="w"> </span><span class="p">(</span><span class="w"> </span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">c</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">d</span><span class="p">,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">out1</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">out2</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">);</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="n">mod_a</span><span class="w"> </span><span class="n">ins</span><span class="p">(</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">        </span><span class="p">.</span><span class="n">out1</span><span class="p">(</span><span class="n">out1</span><span class="p">),</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">        </span><span class="p">.</span><span class="n">out2</span><span class="p">(</span><span class="n">out2</span><span class="p">),</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">        </span><span class="p">.</span><span class="n">in1</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="c1">//.in1(a)表示将a连接到in1,in1是里面的mod_a的输入, a是外面的top_module的输入</span>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">        </span><span class="p">.</span><span class="n">in2</span><span class="p">(</span><span class="n">b</span><span class="p">),</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">        </span><span class="p">.</span><span class="n">in3</span><span class="p">(</span><span class="n">c</span><span class="p">),</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">        </span><span class="p">.</span><span class="n">in4</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="k">endmodule</span>
+</span></code></pre></div>
 
 
 
@@ -1795,7 +2009,7 @@ counter = 32'h64 ;32位宽，16进制6*16+4=100</p>
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月14日 19:05:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月15日 22:22:33</span>
   </span>
 
     
@@ -1805,7 +2019,7 @@ counter = 32'h64 ;32位宽，16进制6*16+4=100</p>
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月14日 19:05:08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2025年2月15日 22:22:33</span>
   </span>
 
     
