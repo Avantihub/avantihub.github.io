@@ -141,7 +141,8 @@ nav:
               - Phoneme Classification: cs/ML/Hungyi22/hw2.md
               - Image Classification: cs/ML/Hungyi22/HW3/dataaug.md
           - Train:
-              - Transfer&Curriculum learning: cs/ML/Train/Transfer_Curri.md    
+              - Transfer&Curriculum learning: cs/ML/Train/Transfer_Curri.md 
+              - Skill: cs/ML/Train/Skills0.md   
       - 编程语言:
           - C/C++:
               - C语言: cs/pl/c_cpp/C/c.md
