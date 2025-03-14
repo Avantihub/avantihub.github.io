@@ -153,6 +153,7 @@ nav:
           - Python:
               - Index: cs/pl/python/index.md
               - CS61A: cs/pl/python/cs61a.md
+                
       - Algorithm:
           - Data Structure:
               - Note Adapted from NoughtQ:
