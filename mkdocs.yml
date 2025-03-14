@@ -153,21 +153,32 @@ nav:
           - Python:
               - Index: cs/pl/python/index.md
               - CS61A: cs/pl/python/cs61a.md
-      - Verilog:
-          - Wire:
-              - Gate: cs/verilog0.md   
-                
-  - Assembly:
-      - asm1: assembly/asm1.md
-      - asm2: assembly/asm2.md
-      - stk&Regi: assembly/stk.md
+      - Algorithm:
+          - Data Structure:
+              - Note Adapted from NoughtQ:
+                  - Algorithm Analysis: cs/FDS/note_from_NoughtQ/2.md
+                  - Stack & Queue: cs/FDS/note_from_NoughtQ/3.md
+                  - Tree: cs/FDS/note_from_NoughtQ/4.md
+                      
+      - Hardware:
+          - System 1:
+              - Combinatorial Logic Design:
+                  - CLA: cs/Hardware/CLA.md
+          - Verilog:
+              - Wire:
+                  - Gate: cs/verilog0.md     
+                  
+  - Math:
+      - Analysis: math/Analysis2/Analy1.md
+      - Linear Algebra: math/LA2/Quotient_space.md
+      - Discrete Math: math/Discrete_Math/DM0.md
   - CodingProb:
       - P1010幂次方: codingprob/P1010.md
       - P1011车站: codingprob/P1011.md
       - P1098字符串展开: codingprob/P1098.md
       - Hello: codingprob/hello0.md
   - Life:
-      - Optimistic: Life/optimistic.md
+      - Efficient AI: Life/kernel_linux.md
       - Memory Folding: Life/24lec0.md
   #- Math:
   #- Calculus: math/calculus/zjucalc24/quiz/anal_quiz2/index.html
