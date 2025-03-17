@@ -71,3 +71,54 @@ total: $2^{2^n}$ possible functions
 A 极小项(minterm) is a conjunctive of literals in which each variable is represented exactly once.
 A 极大项(maxterm) is a disjunctive of literals in which each variable is represented exactly once.
 可以从真值表中得到主析取范式(Full Disjunctive Normal Form)
+
+## 2024 Quiz 1
+
+### T7
+
+
+
+集合 \( A = \{\lceil x \rceil + \lceil 2x \rceil + \lceil 3x \rceil \mid x \in \mathbb{R}\} \)，集合 \( B = \{x \mid x \text{ 是小于 2024 的正整数}\} \)。求 \( |A \cap B| \)。
+
+---
+
+### **关键分析步骤**
+
+1. **表达式分解**
+   设 \( x = a + f \)，其中 \( a \in \mathbb{Z} \)，\( 0 \leq f < 1 \)。则：
+   \[
+   \lceil x \rceil = a + 1, \quad \lceil 2x \rceil = 2a + \lceil 2f \rceil, \quad \lceil 3x \rceil = 3a + \lceil 3f \rceil.
+   \]
+   因此，总和为：
+   \[
+   S = 6a + 1 + \lceil 2f \rceil + \lceil 3f \rceil.
+   \]
+
+2. **分析 \( f \) 的区间**
+   - \( f \in [0, 1/3) \): \( \lceil 2f \rceil = 1 \), \( \lceil 3f \rceil = 1 \), 此时 \( S = 6a + 3 \).
+   - \( f \in [1/3, 0.5) \): \( \lceil 2f \rceil = 1 \), \( \lceil 3f \rceil = 2 \), 此时 \( S = 6a + 4 \).
+   - \( f \in [0.5, 2/3) \): \( \lceil 2f \rceil = 2 \), \( \lceil 3f \rceil = 2 \), 此时 \( S = 6a + 5 \).
+   - \( f \in [2/3, 1) \): \( \lceil 2f \rceil = 2 \), \( \lceil 3f \rceil = 3 \), 此时 \( S = 6a + 6 \).
+
+3. **确定 \( a \) 的范围**
+   由 \( S < 2024 \)，得 \( 6a + 6 \leq 2023 \)，解得 \( a \leq 336 \)。因此，\( a \in \{0, 1, 2, \dots, 336\} \)。
+
+4. **统计有效 \( S \) 值**
+   每个 \( a \) 对应 \( 4 \) 个连续的 \( S \) 值：\( 6a + 3, 6a + 4, 6a + 5, 6a + 6 \)。
+   总共有 \( 337 \) 个 \( a \)，每个生成 \( 4 \) 个 \( S \)，故总数为：
+   \[
+   337 \times 4 = 1348.
+   \]
+
+5. **验证覆盖范围**
+   所有 \( S \) 值形如 \( 6k + 3, 6k + 4, 6k + 5, 6k + 6 \)（\( k \geq 0 \)），即 \( S \equiv 0, 3, 4, 5 \pmod{6} \)。
+   在 \( 1 \leq S \leq 2023 \) 范围内，这些数覆盖了所有满足条件的正整数。
+
+---
+
+### **结论**
+集合 \( A \cap B \) 的元素个数为：
+
+\[
+\boxed{1348}
+\]
