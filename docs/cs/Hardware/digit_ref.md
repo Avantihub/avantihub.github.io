@@ -16,3 +16,12 @@
 
 [wintermelonc的整理](https://wintermelonc.github.io/WintermelonC_Docs/zju/basic_courses/digital_logic_design/#final-project10)
 [期末大程指南](https://www.cc98.org/topic/5794552)
+
+### Represenation of numbers
+
+- from 64bit complement to 128bit complement:
+- just copy the sign bit to the new bits
+
+### Shift - Distinguish
+- Logic right shift: fill with 0
+- Arithmetic right shift: fill with sign bit
