@@ -167,6 +167,7 @@ nav:
           - System 1:
               - Combinatorial Logic Design:
                   - CLA: cs/Hardware/CLA.md
+                  - RISC-V: cs/Hardware/risc5.md 
           - Verilog:
               - Wire:
                   - Gate: cs/verilog0.md     
