@@ -73,3 +73,36 @@ RISC-V 的 **Immediate Encoding Variants** 是一套巧妙的编码规则，将�
 1. 不同指令类型对应不同的立即数编码方式。
 2. 立即数会被拆分到指令的特定位置，再组合成完整的值。
 3. 符号扩展和左移操作常用于处理大范围数值。
+
+
+### 运行模式
+
+- 从高到低是
+    - `Machine Mode` 机器模式 `Level 3`
+    - `Supervisor Mode` 监控模式 `Level 1`
+    - `User Mode` 用户模式 `Level 0`
+
+- 机器模式是最高权限的模式，拥有对所有硬件资源的完全控制权。
+- 监控模式是中间权限的模式，通常用于操作系统内核。
+- 用户模式是最低权限的模式，通常用于运行用户应用程序。
+
+### Reference Card
+- [RISC-V Instruction Set Manual](https://riscv.org/specifications/)
+
+### RISC-V operands
+
+- **寄存器**：`x0` 到 `x31`，其中 `x0` 是硬编码为 0 的零寄存器。
+    - `x1`: `ra`（返回地址寄存器）return address
+    - `x2`: `sp`（堆栈指针寄存器）stack pointer
+    - `x3`: `gp`（全局指针寄存器）global pointer
+    - `x4`: `tp`（线程指针寄存器）thread pointer
+    - `x5` 到 `x7`: 保留
+    - `x8`: `s0/fp`（帧指针寄存器）frame pointer
+    - `x9`: `s1/bp`（基指针寄存器）base pointer
+    - `x10` 到 `x17`: 参数传递寄存器
+- **立即数**：可以是 5 位、6 位、8 位、12 位、20 位或 32 位的立即数。
+- **内存地址**：可以是寄存器加上 12 位、20 位或 32 位的立即数。
+
+### RISC-V 指令集
+
+![R-type]("../../assets/images/cs/hardware/int0.png")
